@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spanish Vocab Tracker</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f4f0;
+    --surface: #ffffff;
+    --surface2: #f0eff0;
+    --border: rgba(0,0,0,0.12);
+    --border2: rgba(0,0,0,0.22);
+    --text: #1a1a1a;
+    --text2: #666;
+    --purple-bg: #EEEDFE;
+    --purple-text: #3C3489;
+    --purple-border: #AFA9EC;
+    --purple-hover: #CECBF6;
+    --green-bg: #EAF3DE;
+    --green-text: #3B6D11;
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .container { max-width: 680px; margin: 0 auto; }
+
+  header { margin-bottom: 2rem; }
+  header h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+  header p { font-size: 14px; color: var(--text2); }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+  .stat {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+  }
+  .stat-num { font-size: 28px; font-weight: 500; }
+  .stat-label { font-size: 13px; color: var(--text2); margin-top: 2px; }
+
+  .add-lesson-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+  }
+  .add-lesson-bar input {
+    flex: 1;
+    padding: 9px 12px;
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius);
+    font-size: 14px;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+  }
+  .add-lesson-bar input:focus { border-color: var(--purple-border); }
+
+  button {
+    padding: 9px 16px;
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  button:hover { background: var(--surface2); }
+  button.primary {
+    background: var(--purple-bg);
+    color: var(--purple-text);
+    border-color: var(--purple-border);
+  }
+  button.primary:hover { background: var(--purple-hover); }
+  button.danger { color: #a32d2d; border-color: #f09595; }
+  button.danger:hover { background: #fcebeb; }
+
+  .lesson {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .lesson-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .lesson-header:hover { background: var(--surface2); }
+
+  .lesson-badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--purple-bg);
+    color: var(--purple-text);
+    flex-shrink: 0;
+  }
+  .lesson-title { font-size: 15px; font-weight: 500; flex: 1; }
+  .lesson-count { font-size: 13px; color: var(--text2); flex-shrink: 0; }
+  .lesson-arrow { font-size: 11px; color: var(--text2); transition: transform 0.2s; flex-shrink: 0; }
+  .lesson-arrow.open { transform: rotate(90deg); }
+
+  .lesson-body { display: none; padding: 0 16px 14px; }
+  .lesson-body.open { display: block; }
+
+  .words-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+
+  .word-row {
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .word-en {
+    padding: 9px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .word-en:hover { background: var(--surface); }
+  .word-en.revealed {
+    background: var(--surface);
+    border-bottom: 0.5px solid var(--border);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .word-en-text { flex: 1; }
+  .delete-word-btn {
+    padding: 2px 6px;
+    font-size: 11px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.15s;
+    border-color: #f09595;
+    color: #a32d2d;
+    background: transparent;
+  }
+  .word-en:hover .delete-word-btn { opacity: 1; }
+  .delete-word-btn:hover { background: #fcebeb !important; }
+
+  .word-es {
+    display: none;
+    padding: 8px 10px 8px 14px;
+    font-size: 14px;
+    color: var(--purple-text);
+    background: var(--purple-bg);
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .word-es.open { display: flex; }
+
+  .speak-btn {
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid var(--purple-text);
+    background: white;
+    cursor: pointer;
+    color: var(--purple-text);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .speak-btn:hover { background: var(--purple-hover); }
+
+  .add-word-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .add-word-form input {
+    flex: 1;
+    min-width: 120px;
+    padding: 7px 10px;
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius);
+    font-size: 13px;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+  }
+  .add-word-form input:focus { border-color: var(--purple-border); }
+
+  .lesson-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: #2c2c2a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    transition: transform 0.25s;
+    z-index: 999;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🇪🇸 Spanish Vocab Tracker</h1>
+    <p>Click an English word to reveal its Spanish translation</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num" id="stat-words">–</div><div class="stat-label">total words</div></div>
+    <div class="stat"><div class="stat-num" id="stat-lessons">–</div><div class="stat-label">lessons</div></div>
+    <div class="stat"><div class="stat-num" id="stat-next">–</div><div class="stat-label">up next</div></div>
+  </div>
+
+  <div class="add-lesson-bar">
+    <input type="text" id="new-lesson-input" placeholder="New lesson title…" />
+    <button class="primary" onclick="addLesson()">+ Add lesson</button>
+  </div>
+
+  <div id="lessons-container"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let lessons = [];
+let nextLesson = '';
+let spanishVoice = null;
+
+function loadVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  spanishVoice = voices.find(v => v.lang === 'es-ES') ||
+                 voices.find(v => v.lang.startsWith('es')) || null;
+}
+window.speechSynthesis.onvoiceschanged = loadVoice;
+loadVoice();
+
+function speak(text) {
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'es-ES';
+  if (spanishVoice) utt.voice = spanishVoice;
+  utt.rate = 0.9;
+  window.speechSynthesis.speak(utt);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+async function fetchLessons() {
+  const res = await fetch('/api/lessons');
+  const data = await res.json();
+  lessons = data.lessons;
+  nextLesson = data.next_lesson;
+  render();
+}
+
+function updateStats() {
+  const total = lessons.reduce((sum, l) => sum + l.words.length, 0);
+  document.getElementById('stat-words').textContent = total;
+  document.getElementById('stat-lessons').textContent = lessons.length;
+  document.getElementById('stat-next').textContent = nextLesson;
+}
+
+function render() {
+  updateStats();
+  const container = document.getElementById('lessons-container');
+  container.innerHTML = '';
+  lessons.forEach(lesson => container.appendChild(buildLesson(lesson)));
+}
+
+function buildLesson(lesson) {
+  const div = document.createElement('div');
+  div.className = 'lesson';
+  div.id = `lesson-${lesson.id}`;
+
+  const wordsHtml = lesson.words.map((w, i) => buildWordRow(lesson.id, w, i)).join('');
+
+  div.innerHTML = `
+    <div class="lesson-header" onclick="toggleLesson('${lesson.id}')">
+      <span class="lesson-badge">${lesson.id}</span>
+      <span class="lesson-title">${lesson.title}</span>
+      <span class="lesson-count">${lesson.words.length} words</span>
+      <span class="lesson-arrow" id="arrow-${lesson.id}">&#9654;</span>
+    </div>
+    <div class="lesson-body" id="body-${lesson.id}">
+      <div class="words-list" id="words-${lesson.id}">${wordsHtml}</div>
+      <div class="add-word-form">
+        <input type="text" id="en-${lesson.id}" placeholder="English…" onkeydown="if(event.key==='Enter') addWord('${lesson.id}')" />
+        <input type="text" id="es-${lesson.id}" placeholder="Español…" onkeydown="if(event.key==='Enter') addWord('${lesson.id}')" />
+        <button class="primary" onclick="addWord('${lesson.id}')">+ Add word</button>
+      </div>
+      <div class="lesson-footer">
+        <span style="font-size:12px;color:var(--text2)">${lesson.id}</span>
+        <button class="danger" onclick="deleteLesson('${lesson.id}')">Delete lesson</button>
+      </div>
+    </div>`;
+  return div;
+}
+
+function buildWordRow(lessonId, word, index) {
+  const [en, es] = word;
+  const safeEs = es.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  return `
+    <div class="word-row" id="word-${lessonId}-${index}">
+      <div class="word-en" onclick="toggleWord(this)">
+        <span class="word-en-text">${en}</span>
+        <button class="delete-word-btn" onclick="event.stopPropagation(); deleteWord('${lessonId}', ${index})">✕</button>
+      </div>
+      <div class="word-es" onclick="toggleWord(this.previousElementSibling)">
+        <span>${es}</span>
+        <button class="speak-btn" title="Hear pronunciation" onclick="event.stopPropagation(); speak('${safeEs}')">&#9654;</button>
+      </div>
+    </div>`;
+}
+
+function toggleLesson(id) {
+  const body = document.getElementById(`body-${id}`);
+  const arrow = document.getElementById(`arrow-${id}`);
+  const open = body.classList.toggle('open');
+  arrow.classList.toggle('open', open);
+}
+
+function toggleWord(enEl) {
+  const esEl = enEl.nextElementSibling;
+  const isOpen = esEl.classList.contains('open');
+  esEl.classList.toggle('open', !isOpen);
+  enEl.classList.toggle('revealed', !isOpen);
+}
+
+async function addLesson() {
+  const input = document.getElementById('new-lesson-input');
+  const title = input.value.trim();
+  if (!title) return;
+  const res = await fetch('/api/lessons', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ title })
+  });
+  const lesson = await res.json();
+  lessons.push(lesson);
+  input.value = '';
+  render();
+  showToast(`Lesson "${title}" added`);
+}
+
+async function addWord(lessonId) {
+  const enInput = document.getElementById(`en-${lessonId}`);
+  const esInput = document.getElementById(`es-${lessonId}`);
+  const en = enInput.value.trim();
+  const es = esInput.value.trim();
+  if (!en || !es) return;
+  await fetch(`/api/lessons/${lessonId}/words`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ en, es })
+  });
+  const lesson = lessons.find(l => l.id === lessonId);
+  lesson.words.push([en, es]);
+  enInput.value = '';
+  esInput.value = '';
+  render();
+  // Re-open the lesson
+  const body = document.getElementById(`body-${lessonId}`);
+  const arrow = document.getElementById(`arrow-${lessonId}`);
+  body.classList.add('open');
+  arrow.classList.add('open');
+  showToast(`"${en}" → "${es}" added`);
+}
+
+async function deleteWord(lessonId, index) {
+  if (!confirm('Delete this word?')) return;
+  await fetch(`/api/lessons/${lessonId}/words/${index}`, { method: 'DELETE' });
+  const lesson = lessons.find(l => l.id === lessonId);
+  lesson.words.splice(index, 1);
+  render();
+  const body = document.getElementById(`body-${lessonId}`);
+  const arrow = document.getElementById(`arrow-${lessonId}`);
+  body.classList.add('open');
+  arrow.classList.add('open');
+  showToast('Word deleted');
+}
+
+async function deleteLesson(lessonId) {
+  const lesson = lessons.find(l => l.id === lessonId);
+  if (!confirm(`Delete lesson "${lesson.title}" and all its words?`)) return;
+  await fetch(`/api/lessons/${lessonId}`, { method: 'DELETE' });
+  lessons = lessons.filter(l => l.id !== lessonId);
+  render();
+  showToast(`Lesson deleted`);
+}
+
+fetchLessons();
+</script>
+</body>
+</html>
