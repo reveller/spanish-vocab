@@ -1,0 +1,6 @@
+.git
+__pycache__
+.python-version
+.claude
+vocab.db
+*.pyc

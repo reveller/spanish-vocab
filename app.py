@@ -1,78 +1,61 @@
 from flask import Flask, jsonify, request, send_from_directory
-import json, os
+import os
+from db import init_db, seed_from_json, get_all_lessons, add_lesson as db_add_lesson
+from db import update_lesson_progress, delete_lesson as db_delete_lesson
+from db import add_word as db_add_word, delete_word as db_delete_word
 
 app = Flask(__name__, static_folder='static')
-DATA_FILE = os.path.join(os.path.dirname(__file__), 'lessons.json')
 
-def load_data():
-    with open(DATA_FILE, 'r', encoding='utf-8') as f:
-        return json.load(f)
+SEED_FILE = os.path.join(os.path.dirname(__file__), 'lessons.json')
 
-def save_data(data):
-    with open(DATA_FILE, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+init_db()
+if os.path.exists(SEED_FILE):
+    seed_from_json(SEED_FILE)
 
 @app.route('/')
 def index():
     return send_from_directory('static', 'index.html')
 
+@app.route('/api/health')
+def health():
+    return jsonify({'status': 'ok'})
+
 @app.route('/api/lessons', methods=['GET'])
 def get_lessons():
-    data = load_data()
-    return jsonify(data)
-
-@app.route('/api/next_lesson', methods=['GET'])
-def get_next_lesson():
-    data = load_data()
-    return jsonify({"next_lesson": data["next_lesson"]})
-
-@app.route('/api/next_lesson', methods=['PUT'])
-def update_next_lesson():
-    data = load_data()
-    body = request.json
-    data["next_lesson"] = body["next_lesson"]
-    save_data(data)
-    return jsonify({"next_lesson": data["next_lesson"]})
+    return jsonify({'lessons': get_all_lessons()})
 
 @app.route('/api/lessons', methods=['POST'])
 def add_lesson():
-    data = load_data()
-    lessons = data["lessons"]
     body = request.json
-    new_id = f"L{len(lessons) + 1}"
-    lesson = {"id": new_id, "title": body['title'], "words": []}
-    lessons.append(lesson)
-    save_data(data)
+    lesson = db_add_lesson(body['title'])
     return jsonify(lesson), 201
+
+@app.route('/api/lessons/<lesson_id>/progress', methods=['PUT'])
+def update_progress(lesson_id):
+    body = request.json
+    if update_lesson_progress(lesson_id, body['progress']):
+        return jsonify({'ok': True, 'progress': body['progress']})
+    return jsonify({'error': 'Lesson not found'}), 404
 
 @app.route('/api/lessons/<lesson_id>/words', methods=['POST'])
 def add_word(lesson_id):
-    data = load_data()
     body = request.json
-    for lesson in data["lessons"]:
-        if lesson['id'] == lesson_id:
-            lesson['words'].append([body['en'], body['es']])
-            save_data(data)
-            return jsonify({'ok': True}), 201
+    if db_add_word(lesson_id, body['en'], body['es']):
+        return jsonify({'ok': True}), 201
     return jsonify({'error': 'Lesson not found'}), 404
 
 @app.route('/api/lessons/<lesson_id>/words/<int:word_index>', methods=['DELETE'])
 def delete_word(lesson_id, word_index):
-    data = load_data()
-    for lesson in data["lessons"]:
-        if lesson['id'] == lesson_id:
-            if 0 <= word_index < len(lesson['words']):
-                lesson['words'].pop(word_index)
-                save_data(data)
-                return jsonify({'ok': True})
+    if db_delete_word(lesson_id, word_index):
+        return jsonify({'ok': True})
     return jsonify({'error': 'Not found'}), 404
 
 @app.route('/api/lessons/<lesson_id>', methods=['DELETE'])
 def delete_lesson(lesson_id):
-    data = load_data()
-    data["lessons"] = [l for l in data["lessons"] if l['id'] != lesson_id]
-    save_data(data)
+    db_delete_lesson(lesson_id)
     return jsonify({'ok': True})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5050)
+    port = int(os.environ.get('PORT', 5050))
+    debug = os.environ.get('DEBUG', 'false').lower() == 'true'
+    app.run(debug=debug, port=port)

@@ -4,174 +4,315 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Spanish Vocab Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #f5f4f0;
-    --surface: #ffffff;
-    --surface2: #f0eff0;
-    --border: rgba(0,0,0,0.12);
-    --border2: rgba(0,0,0,0.22);
-    --text: #1a1a1a;
-    --text2: #666;
-    --purple-bg: #EEEDFE;
-    --purple-text: #3C3489;
-    --purple-border: #AFA9EC;
-    --purple-hover: #CECBF6;
-    --green-bg: #EAF3DE;
-    --green-text: #3B6D11;
-    --radius: 8px;
-    --radius-lg: 12px;
+    --bg: #FAF6F1;
+    --surface: #FFFFFF;
+    --surface-warm: #F5F0EA;
+    --border: #E2DDD6;
+    --border-strong: #C9C2B8;
+    --text: #2C2824;
+    --text2: #7A746E;
+    --text3: #A39D96;
+
+    --terracotta: #C4562A;
+    --terracotta-light: #F8ECE7;
+    --terracotta-hover: #D4673E;
+
+    --green: #2B6B45;
+    --green-light: #E6F0EA;
+    --green-mid: #B8D4C4;
+
+    --amber: #B8860B;
+    --amber-light: #FDF5E1;
+    --amber-mid: #E8D5A0;
+
+    --gray-badge: #E8E4DF;
+
+    --radius: 6px;
+    --radius-lg: 10px;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', -apple-system, sans-serif;
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
-    padding: 2rem 1rem;
+    padding: 0;
   }
 
-  .container { max-width: 680px; margin: 0 auto; }
+  /* Subtle top accent line */
+  body::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, var(--terracotta) 0%, var(--amber) 50%, var(--green) 100%);
+  }
 
-  header { margin-bottom: 2rem; }
-  header h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
-  header p { font-size: 14px; color: var(--text2); }
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+  }
 
+  /* ── Header ── */
+  header {
+    margin-bottom: 2.25rem;
+    text-align: center;
+  }
+  header h1 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    line-height: 1.1;
+  }
+  header h1 span {
+    color: var(--terracotta);
+  }
+  header p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text2);
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Stats ── */
   .stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
   }
   .stat {
     background: var(--surface);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 10px;
     text-align: center;
   }
-  .stat-num { font-size: 28px; font-weight: 500; }
-  .stat-label { font-size: 13px; color: var(--text2); margin-top: 2px; }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text);
+  }
+  .stat-num.accent { color: var(--terracotta); }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text3);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
 
+  /* ── Add lesson bar ── */
   .add-lesson-bar {
     display: flex;
     gap: 8px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
   .add-lesson-bar input {
     flex: 1;
-    padding: 9px 12px;
-    border: 0.5px solid var(--border2);
+    padding: 10px 14px;
+    border: 1px solid var(--border);
     border-radius: var(--radius);
+    font-family: var(--font-body);
     font-size: 14px;
+    font-weight: 300;
     background: var(--surface);
     color: var(--text);
     outline: none;
+    transition: border-color 0.2s;
   }
-  .add-lesson-bar input:focus { border-color: var(--purple-border); }
+  .add-lesson-bar input:focus { border-color: var(--terracotta); }
+  .add-lesson-bar input::placeholder { color: var(--text3); }
 
+  /* ── Buttons ── */
   button {
-    padding: 9px 16px;
-    border: 0.5px solid var(--border2);
+    font-family: var(--font-body);
+    padding: 10px 18px;
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     background: var(--surface);
     color: var(--text);
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
     white-space: nowrap;
+    transition: all 0.15s;
   }
-  button:hover { background: var(--surface2); }
+  button:hover { background: var(--surface-warm); }
   button.primary {
-    background: var(--purple-bg);
-    color: var(--purple-text);
-    border-color: var(--purple-border);
+    background: var(--terracotta);
+    color: white;
+    border-color: var(--terracotta);
   }
-  button.primary:hover { background: var(--purple-hover); }
-  button.danger { color: #a32d2d; border-color: #f09595; }
-  button.danger:hover { background: #fcebeb; }
+  button.primary:hover {
+    background: var(--terracotta-hover);
+    border-color: var(--terracotta-hover);
+  }
+  button.danger { color: #9B3A3A; border-color: #DEB8B8; }
+  button.danger:hover { background: #FDF0F0; }
 
+  /* ── Lesson card ── */
   .lesson {
     background: var(--surface);
-    border: 0.5px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     overflow: hidden;
+    transition: box-shadow 0.2s;
   }
+  .lesson:hover { box-shadow: 0 2px 12px rgba(44,40,36,0.06); }
 
   .lesson-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 16px;
+    padding: 14px 18px;
     cursor: pointer;
     user-select: none;
+    transition: background 0.15s;
   }
-  .lesson-header:hover { background: var(--surface2); }
+  .lesson-header:hover { background: var(--surface-warm); }
 
-  .lesson-badge {
-    font-size: 12px;
-    font-weight: 500;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background: var(--purple-bg);
-    color: var(--purple-text);
+  .lesson-id {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text2);
+    width: 28px;
     flex-shrink: 0;
   }
-  .lesson-title { font-size: 15px; font-weight: 500; flex: 1; }
-  .lesson-count { font-size: 13px; color: var(--text2); flex-shrink: 0; }
-  .lesson-arrow { font-size: 11px; color: var(--text2); transition: transform 0.2s; flex-shrink: 0; }
+
+  .lesson-title {
+    font-size: 15px;
+    font-weight: 500;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .lesson-count {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text3);
+    flex-shrink: 0;
+  }
+
+  /* ── Progress badge ── */
+  .progress-badge {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+    border: none;
+    white-space: nowrap;
+  }
+  .progress-badge:hover { transform: scale(1.05); }
+
+  .progress-badge.not_started {
+    background: var(--gray-badge);
+    color: var(--text2);
+  }
+  .progress-badge.still_learning {
+    background: var(--amber-light);
+    color: var(--amber);
+    box-shadow: inset 0 0 0 1px var(--amber-mid);
+  }
+  .progress-badge.know_it {
+    background: var(--green-light);
+    color: var(--green);
+    box-shadow: inset 0 0 0 1px var(--green-mid);
+  }
+
+  .lesson-arrow {
+    font-size: 10px;
+    color: var(--text3);
+    transition: transform 0.25s;
+    flex-shrink: 0;
+  }
   .lesson-arrow.open { transform: rotate(90deg); }
 
-  .lesson-body { display: none; padding: 0 16px 14px; }
+  /* ── Lesson body ── */
+  .lesson-body {
+    display: none;
+    padding: 0 18px 16px;
+  }
   .lesson-body.open { display: block; }
 
-  .words-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+  .words-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 14px;
+  }
 
+  /* ── Word rows ── */
   .word-row {
-    border: 0.5px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
   }
   .word-en {
-    padding: 9px 14px;
+    padding: 10px 14px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     cursor: pointer;
     user-select: none;
-    background: var(--surface2);
+    background: var(--surface-warm);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    transition: background 0.15s;
   }
-  .word-en:hover { background: var(--surface); }
+  .word-en:hover { background: #EDE8E2; }
   .word-en.revealed {
     background: var(--surface);
-    border-bottom: 0.5px solid var(--border);
-    border-radius: var(--radius) var(--radius) 0 0;
+    border-bottom: 1px solid var(--border);
   }
   .word-en-text { flex: 1; }
+
   .delete-word-btn {
-    padding: 2px 6px;
+    padding: 2px 7px;
     font-size: 11px;
     border-radius: 4px;
     opacity: 0;
     transition: opacity 0.15s;
-    border-color: #f09595;
-    color: #a32d2d;
+    border: 1px solid #DEB8B8;
+    color: #9B3A3A;
     background: transparent;
   }
   .word-en:hover .delete-word-btn { opacity: 1; }
-  .delete-word-btn:hover { background: #fcebeb !important; }
+  .delete-word-btn:hover { background: #FDF0F0 !important; }
 
   .word-es {
     display: none;
-    padding: 8px 10px 8px 14px;
+    padding: 10px 14px;
     font-size: 14px;
-    color: var(--purple-text);
-    background: var(--purple-bg);
+    font-weight: 500;
+    color: var(--terracotta);
+    background: var(--terracotta-light);
     cursor: pointer;
     user-select: none;
     align-items: center;
@@ -182,80 +323,130 @@
 
   .speak-btn {
     flex-shrink: 0;
-    width: 30px; height: 30px;
+    width: 28px; height: 28px;
     border-radius: 50%;
-    border: 1.5px solid var(--purple-text);
+    border: 1.5px solid var(--terracotta);
     background: white;
     cursor: pointer;
-    color: var(--purple-text);
-    font-size: 12px;
+    color: var(--terracotta);
+    font-size: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
+    transition: background 0.15s;
   }
-  .speak-btn:hover { background: var(--purple-hover); }
+  .speak-btn:hover { background: var(--terracotta-light); }
 
+  /* ── Add word form ── */
   .add-word-form {
     display: flex;
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 10px;
     flex-wrap: wrap;
   }
   .add-word-form input {
     flex: 1;
     min-width: 120px;
-    padding: 7px 10px;
-    border: 0.5px solid var(--border2);
+    padding: 8px 12px;
+    border: 1px solid var(--border);
     border-radius: var(--radius);
+    font-family: var(--font-body);
     font-size: 13px;
+    font-weight: 300;
     background: var(--surface);
     color: var(--text);
     outline: none;
+    transition: border-color 0.2s;
   }
-  .add-word-form input:focus { border-color: var(--purple-border); }
+  .add-word-form input:focus { border-color: var(--terracotta); }
+  .add-word-form input::placeholder { color: var(--text3); }
 
   .lesson-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 0.5px solid var(--border);
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .lesson-footer-id {
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--text3);
+    font-style: italic;
   }
 
+  /* ── Toast ── */
   .toast {
     position: fixed;
     bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%) translateY(80px);
-    background: #2c2c2a;
-    color: white;
-    padding: 10px 20px;
+    background: var(--text);
+    color: var(--bg);
+    padding: 10px 22px;
     border-radius: var(--radius);
     font-size: 13px;
-    transition: transform 0.25s;
+    font-weight: 400;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 999;
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ── Progress legend (below stats) ── */
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 2rem;
+    font-size: 12px;
+    color: var(--text2);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  .legend-dot.not_started { background: var(--border-strong); }
+  .legend-dot.still_learning { background: var(--amber); }
+  .legend-dot.know_it { background: var(--green); }
+
+  /* ── Responsive ── */
+  @media (max-width: 500px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    header h1 { font-size: 28px; }
+  }
 </style>
 </head>
 <body>
 <div class="container">
   <header>
-    <h1>🇪🇸 Spanish Vocab Tracker</h1>
-    <p>Click an English word to reveal its Spanish translation</p>
+    <h1>Vocabulario <span>Espa&ntilde;ol</span></h1>
+    <p>Click a word to reveal its translation</p>
   </header>
 
   <div class="stats">
-    <div class="stat"><div class="stat-num" id="stat-words">–</div><div class="stat-label">total words</div></div>
-    <div class="stat"><div class="stat-num" id="stat-lessons">–</div><div class="stat-label">lessons</div></div>
-    <div class="stat"><div class="stat-num" id="stat-next">–</div><div class="stat-label">up next</div></div>
+    <div class="stat"><div class="stat-num" id="stat-words">&ndash;</div><div class="stat-label">Words</div></div>
+    <div class="stat"><div class="stat-num" id="stat-lessons">&ndash;</div><div class="stat-label">Lessons</div></div>
+    <div class="stat"><div class="stat-num" id="stat-learned">&ndash;</div><div class="stat-label">Learned</div></div>
+    <div class="stat"><div class="stat-num accent" id="stat-next">&ndash;</div><div class="stat-label">Up Next</div></div>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot not_started"></span> Sin empezar</span>
+    <span class="legend-item"><span class="legend-dot still_learning"></span> Aprendiendo</span>
+    <span class="legend-item"><span class="legend-dot know_it"></span> &iexcl;Lo s&eacute;!</span>
   </div>
 
   <div class="add-lesson-bar">
-    <input type="text" id="new-lesson-input" placeholder="New lesson title…" />
-    <button class="primary" onclick="addLesson()">+ Add lesson</button>
+    <input type="text" id="new-lesson-input" placeholder="New lesson title..." />
+    <button class="primary" onclick="addLesson()">Add lesson</button>
   </div>
 
   <div id="lessons-container"></div>
@@ -265,8 +456,14 @@
 
 <script>
 let lessons = [];
-let nextLesson = '';
 let spanishVoice = null;
+
+const PROGRESS_CYCLE = ['not_started', 'still_learning', 'know_it'];
+const PROGRESS_LABELS = {
+  not_started: 'Sin empezar',
+  still_learning: 'Aprendiendo',
+  know_it: '\u00a1Lo s\u00e9!'
+};
 
 function loadVoice() {
   const voices = window.speechSynthesis.getVoices();
@@ -292,26 +489,36 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2200);
 }
 
+function getNextLesson() {
+  const next = lessons.find(l => l.progress === 'not_started');
+  return next ? next.id : 'Done!';
+}
+
 async function fetchLessons() {
   const res = await fetch('/api/lessons');
   const data = await res.json();
   lessons = data.lessons;
-  nextLesson = data.next_lesson;
   render();
 }
 
 function updateStats() {
   const total = lessons.reduce((sum, l) => sum + l.words.length, 0);
+  const learned = lessons.filter(l => l.progress === 'know_it').length;
   document.getElementById('stat-words').textContent = total;
   document.getElementById('stat-lessons').textContent = lessons.length;
-  document.getElementById('stat-next').textContent = nextLesson;
+  document.getElementById('stat-learned').textContent = learned;
+  document.getElementById('stat-next').textContent = getNextLesson();
 }
 
 function render() {
   updateStats();
   const container = document.getElementById('lessons-container');
   container.innerHTML = '';
-  lessons.forEach(lesson => container.appendChild(buildLesson(lesson)));
+  lessons.forEach((lesson, i) => {
+    const el = buildLesson(lesson);
+    el.style.animationDelay = `${i * 30}ms`;
+    container.appendChild(el);
+  });
 }
 
 function buildLesson(lesson) {
@@ -323,20 +530,23 @@ function buildLesson(lesson) {
 
   div.innerHTML = `
     <div class="lesson-header" onclick="toggleLesson('${lesson.id}')">
-      <span class="lesson-badge">${lesson.id}</span>
+      <span class="lesson-id">${lesson.id}</span>
       <span class="lesson-title">${lesson.title}</span>
       <span class="lesson-count">${lesson.words.length} words</span>
+      <button class="progress-badge ${lesson.progress}"
+              onclick="event.stopPropagation(); cycleProgress('${lesson.id}')"
+              title="Click to change progress">${PROGRESS_LABELS[lesson.progress]}</button>
       <span class="lesson-arrow" id="arrow-${lesson.id}">&#9654;</span>
     </div>
     <div class="lesson-body" id="body-${lesson.id}">
       <div class="words-list" id="words-${lesson.id}">${wordsHtml}</div>
       <div class="add-word-form">
-        <input type="text" id="en-${lesson.id}" placeholder="English…" onkeydown="if(event.key==='Enter') addWord('${lesson.id}')" />
-        <input type="text" id="es-${lesson.id}" placeholder="Español…" onkeydown="if(event.key==='Enter') addWord('${lesson.id}')" />
-        <button class="primary" onclick="addWord('${lesson.id}')">+ Add word</button>
+        <input type="text" id="en-${lesson.id}" placeholder="English..." onkeydown="if(event.key==='Enter') addWord('${lesson.id}')" />
+        <input type="text" id="es-${lesson.id}" placeholder="Espa\u00f1ol..." onkeydown="if(event.key==='Enter') addWord('${lesson.id}')" />
+        <button class="primary" onclick="addWord('${lesson.id}')">Add</button>
       </div>
       <div class="lesson-footer">
-        <span style="font-size:12px;color:var(--text2)">${lesson.id}</span>
+        <span class="lesson-footer-id">${lesson.id}</span>
         <button class="danger" onclick="deleteLesson('${lesson.id}')">Delete lesson</button>
       </div>
     </div>`;
@@ -350,7 +560,7 @@ function buildWordRow(lessonId, word, index) {
     <div class="word-row" id="word-${lessonId}-${index}">
       <div class="word-en" onclick="toggleWord(this)">
         <span class="word-en-text">${en}</span>
-        <button class="delete-word-btn" onclick="event.stopPropagation(); deleteWord('${lessonId}', ${index})">✕</button>
+        <button class="delete-word-btn" onclick="event.stopPropagation(); deleteWord('${lessonId}', ${index})">&#10005;</button>
       </div>
       <div class="word-es" onclick="toggleWord(this.previousElementSibling)">
         <span>${es}</span>
@@ -371,6 +581,27 @@ function toggleWord(enEl) {
   const isOpen = esEl.classList.contains('open');
   esEl.classList.toggle('open', !isOpen);
   enEl.classList.toggle('revealed', !isOpen);
+}
+
+async function cycleProgress(lessonId) {
+  const lesson = lessons.find(l => l.id === lessonId);
+  const currentIdx = PROGRESS_CYCLE.indexOf(lesson.progress);
+  const nextProgress = PROGRESS_CYCLE[(currentIdx + 1) % PROGRESS_CYCLE.length];
+  lesson.progress = nextProgress;
+
+  // Update badge immediately for responsiveness
+  const badge = document.querySelector(`#lesson-${lessonId} .progress-badge`);
+  badge.className = `progress-badge ${nextProgress}`;
+  badge.textContent = PROGRESS_LABELS[nextProgress];
+  updateStats();
+
+  await fetch(`/api/lessons/${lessonId}/progress`, {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ progress: nextProgress })
+  });
+
+  showToast(`${lessonId}: ${PROGRESS_LABELS[nextProgress]}`);
 }
 
 async function addLesson() {
@@ -405,12 +636,11 @@ async function addWord(lessonId) {
   enInput.value = '';
   esInput.value = '';
   render();
-  // Re-open the lesson
   const body = document.getElementById(`body-${lessonId}`);
   const arrow = document.getElementById(`arrow-${lessonId}`);
   body.classList.add('open');
   arrow.classList.add('open');
-  showToast(`"${en}" → "${es}" added`);
+  showToast(`"${en}" \u2192 "${es}" added`);
 }
 
 async function deleteWord(lessonId, index) {
@@ -432,7 +662,7 @@ async function deleteLesson(lessonId) {
   await fetch(`/api/lessons/${lessonId}`, { method: 'DELETE' });
   lessons = lessons.filter(l => l.id !== lessonId);
   render();
-  showToast(`Lesson deleted`);
+  showToast('Lesson deleted');
 }
 
 fetchLessons();

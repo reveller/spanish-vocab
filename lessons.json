@@ -1,363 +1,1065 @@
 {
-  "next_lesson": "L4",
   "lessons": [
     {
       "id": "L1",
       "title": "Directions",
+      "progress": "still_learning",
       "words": [
-        ["here", "aquí"],
-        ["there", "allí"],
-        ["left", "izquierda"],
-        ["right", "derecha"],
-        ["up", "arriba"],
-        ["down", "abajo"],
-        ["straight ahead (informal)", "todo recto"],
-        ["straight ahead (formal)", "todo derecho"]
+        [
+          "here",
+          "aquí"
+        ],
+        [
+          "there",
+          "allí"
+        ],
+        [
+          "left",
+          "izquierda"
+        ],
+        [
+          "right",
+          "derecha"
+        ],
+        [
+          "up",
+          "arriba"
+        ],
+        [
+          "down",
+          "abajo"
+        ],
+        [
+          "straight ahead (informal)",
+          "todo recto"
+        ],
+        [
+          "straight ahead (formal)",
+          "todo derecho"
+        ]
       ]
     },
     {
       "id": "L2",
       "title": "Quantity / Emphasis / Time",
+      "progress": "still_learning",
       "words": [
-        ["one / a", "uno/una"],
-        ["only, just", "solo"],
-        ["once", "una vez"],
-        ["again", "otra vez"],
-        ["sometimes", "a veces"],
-        ["this time", "esta vez"],
-        ["next time", "la próxima vez"]
+        [
+          "one / a",
+          "uno/una"
+        ],
+        [
+          "only, just",
+          "solo"
+        ],
+        [
+          "once",
+          "una vez"
+        ],
+        [
+          "again",
+          "otra vez"
+        ],
+        [
+          "sometimes",
+          "a veces"
+        ],
+        [
+          "this time",
+          "esta vez"
+        ],
+        [
+          "next time",
+          "la próxima vez"
+        ]
       ]
     },
     {
       "id": "L3",
       "title": "Days of the week",
+      "progress": "still_learning",
       "words": [
-        ["Monday", "lunes"],
-        ["Tuesday", "martes"],
-        ["Wednesday", "miércoles"],
-        ["Thursday", "jueves"],
-        ["Friday", "viernes"],
-        ["Saturday", "sábado"],
-        ["Sunday", "domingo"],
-        ["today is...", "hoy es..."],
-        ["tomorrow is...", "mañana es..."],
-        ["yesterday was...", "ayer fue..."]
+        [
+          "Monday",
+          "lunes"
+        ],
+        [
+          "Tuesday",
+          "martes"
+        ],
+        [
+          "Wednesday",
+          "miércoles"
+        ],
+        [
+          "Thursday",
+          "jueves"
+        ],
+        [
+          "Friday",
+          "viernes"
+        ],
+        [
+          "Saturday",
+          "sábado"
+        ],
+        [
+          "Sunday",
+          "domingo"
+        ],
+        [
+          "today is...",
+          "hoy es..."
+        ],
+        [
+          "tomorrow is...",
+          "mañana es..."
+        ],
+        [
+          "yesterday was...",
+          "ayer fue..."
+        ]
       ]
     },
     {
       "id": "L4",
       "title": "Week phrases",
+      "progress": "not_started",
       "words": [
-        ["this week", "esta semana"],
-        ["last week", "la semana pasada"],
-        ["next week", "la semana que viene"],
-        ["the weekend", "el fin de semana"],
-        ["on weekdays", "entre semana"],
-        ["a week ago", "hace una semana"],
-        ["in a week's time", "dentro de una semana"]
+        [
+          "this week",
+          "esta semana"
+        ],
+        [
+          "last week",
+          "la semana pasada"
+        ],
+        [
+          "next week",
+          "la semana que viene"
+        ],
+        [
+          "the weekend",
+          "el fin de semana"
+        ],
+        [
+          "on weekdays",
+          "entre semana"
+        ],
+        [
+          "a week ago",
+          "hace una semana"
+        ],
+        [
+          "in a week's time",
+          "dentro de una semana"
+        ]
       ]
     },
     {
       "id": "L5",
       "title": "Numbers 0–19",
+      "progress": "not_started",
       "words": [
-        ["0", "cero"],
-        ["1", "uno"],
-        ["2", "dos"],
-        ["3", "tres"],
-        ["4", "cuatro"],
-        ["5", "cinco"],
-        ["6", "seis"],
-        ["7", "siete"],
-        ["8", "ocho"],
-        ["9", "nueve"],
-        ["10", "diez"],
-        ["11", "once"],
-        ["12", "doce"],
-        ["13", "trece"],
-        ["14", "catorce"],
-        ["15", "quince"],
-        ["16", "dieciséis"],
-        ["17", "diecisiete"],
-        ["18", "dieciocho"],
-        ["19", "diecinueve"]
+        [
+          "0",
+          "cero"
+        ],
+        [
+          "1",
+          "uno"
+        ],
+        [
+          "2",
+          "dos"
+        ],
+        [
+          "3",
+          "tres"
+        ],
+        [
+          "4",
+          "cuatro"
+        ],
+        [
+          "5",
+          "cinco"
+        ],
+        [
+          "6",
+          "seis"
+        ],
+        [
+          "7",
+          "siete"
+        ],
+        [
+          "8",
+          "ocho"
+        ],
+        [
+          "9",
+          "nueve"
+        ],
+        [
+          "10",
+          "diez"
+        ],
+        [
+          "11",
+          "once"
+        ],
+        [
+          "12",
+          "doce"
+        ],
+        [
+          "13",
+          "trece"
+        ],
+        [
+          "14",
+          "catorce"
+        ],
+        [
+          "15",
+          "quince"
+        ],
+        [
+          "16",
+          "dieciséis"
+        ],
+        [
+          "17",
+          "diecisiete"
+        ],
+        [
+          "18",
+          "dieciocho"
+        ],
+        [
+          "19",
+          "diecinueve"
+        ]
       ]
     },
     {
       "id": "L6",
       "title": "Round numbers & counting",
+      "progress": "not_started",
       "words": [
-        ["20", "veinte"],
-        ["30", "treinta"],
-        ["40", "cuarenta"],
-        ["50", "cincuenta"],
-        ["60", "sesenta"],
-        ["70", "setenta"],
-        ["80", "ochenta"],
-        ["90", "noventa"],
-        ["100", "cien"],
-        ["200", "doscientos"],
-        ["1,000", "mil"],
-        ["1,000,000", "un millón"]
+        [
+          "20",
+          "veinte"
+        ],
+        [
+          "30",
+          "treinta"
+        ],
+        [
+          "40",
+          "cuarenta"
+        ],
+        [
+          "50",
+          "cincuenta"
+        ],
+        [
+          "60",
+          "sesenta"
+        ],
+        [
+          "70",
+          "setenta"
+        ],
+        [
+          "80",
+          "ochenta"
+        ],
+        [
+          "90",
+          "noventa"
+        ],
+        [
+          "100",
+          "cien"
+        ],
+        [
+          "200",
+          "doscientos"
+        ],
+        [
+          "1,000",
+          "mil"
+        ],
+        [
+          "1,000,000",
+          "un millón"
+        ]
       ]
     },
     {
       "id": "L7",
       "title": "Ordinals & fractions",
+      "progress": "not_started",
       "words": [
-        ["1st", "primero"],
-        ["2nd", "segundo"],
-        ["3rd", "tercero"],
-        ["4th", "cuarto"],
-        ["5th", "quinto"],
-        ["6th", "sexto"],
-        ["7th", "séptimo"],
-        ["8th", "octavo"],
-        ["9th", "noveno"],
-        ["10th", "décimo"],
-        ["half (adj, e.g. half an hour)", "medio/media"],
-        ["quarter", "cuarto"],
-        ["half (noun, e.g. the half)", "mitad"],
-        ["three quarters", "tres cuartos"],
-        ["full", "lleno/a"]
+        [
+          "1st",
+          "primero"
+        ],
+        [
+          "2nd",
+          "segundo"
+        ],
+        [
+          "3rd",
+          "tercero"
+        ],
+        [
+          "4th",
+          "cuarto"
+        ],
+        [
+          "5th",
+          "quinto"
+        ],
+        [
+          "6th",
+          "sexto"
+        ],
+        [
+          "7th",
+          "séptimo"
+        ],
+        [
+          "8th",
+          "octavo"
+        ],
+        [
+          "9th",
+          "noveno"
+        ],
+        [
+          "10th",
+          "décimo"
+        ],
+        [
+          "half (adj, e.g. half an hour)",
+          "medio/media"
+        ],
+        [
+          "quarter",
+          "cuarto"
+        ],
+        [
+          "half (noun, e.g. the half)",
+          "mitad"
+        ],
+        [
+          "three quarters",
+          "tres cuartos"
+        ],
+        [
+          "full",
+          "lleno/a"
+        ]
       ]
     },
     {
       "id": "L8",
       "title": "Excuse me & polite phrases",
+      "progress": "not_started",
       "words": [
-        ["Excuse me (informal)", "Perdona"],
-        ["Excuse me (formal)", "Perdone"],
-        ["Hey / Listen", "Oye"],
-        ["Please", "Por favor"],
-        ["With your permission / Coming through", "Con permiso"],
-        ["Coming through (direct)", "Paso"],
-        ["I'm sorry", "Lo siento"],
-        ["Sorry (informal)", "Disculpa"],
-        ["Sorry (formal)", "Disculpe"]
+        [
+          "Excuse me (informal)",
+          "Perdona"
+        ],
+        [
+          "Excuse me (formal)",
+          "Perdone"
+        ],
+        [
+          "Hey / Listen",
+          "Oye"
+        ],
+        [
+          "Please",
+          "Por favor"
+        ],
+        [
+          "With your permission / Coming through",
+          "Con permiso"
+        ],
+        [
+          "Coming through (direct)",
+          "Paso"
+        ],
+        [
+          "I'm sorry",
+          "Lo siento"
+        ],
+        [
+          "Sorry (informal)",
+          "Disculpa"
+        ],
+        [
+          "Sorry (formal)",
+          "Disculpe"
+        ]
       ]
     },
     {
       "id": "L9",
       "title": "Pardon & understanding",
+      "progress": "not_started",
       "words": [
-        ["What? / Pardon?", "¿Cómo?"],
-        ["Pardon? (more formal)", "¿Perdón?"],
-        ["I don't understand", "No entiendo"],
-        ["I didn't understand", "No he entendido"],
-        ["Can you repeat?", "¿Puede repetir?"],
-        ["Slower, please", "Más despacio, por favor"],
-        ["Do you speak English?", "¿Habla inglés?"],
-        ["What does that mean?", "¿Qué significa eso?"],
-        ["Speak more quietly/softly.", "Habla más suave."]
+        [
+          "What? / Pardon?",
+          "¿Cómo?"
+        ],
+        [
+          "Pardon? (more formal)",
+          "¿Perdón?"
+        ],
+        [
+          "I don't understand",
+          "No entiendo"
+        ],
+        [
+          "I didn't understand",
+          "No he entendido"
+        ],
+        [
+          "Can you repeat?",
+          "¿Puede repetir?"
+        ],
+        [
+          "Slower, please",
+          "Más despacio, por favor"
+        ],
+        [
+          "Do you speak English?",
+          "¿Habla inglés?"
+        ],
+        [
+          "What does that mean?",
+          "¿Qué significa eso?"
+        ],
+        [
+          "Speak more quietly/softly.",
+          "Habla más suave."
+        ]
       ]
     },
     {
       "id": "L10",
       "title": "After a meal",
+      "progress": "not_started",
       "words": [
-        ["Everything was delicious.", "Todo estaba delicioso."],
-        ["The meal was very tasty.", "La comida estuvo riquísima."],
-        ["Excellent, thank you very much.", "Excelente, muchas gracias."],
-        ["My compliments to the chef.", "Mis cumplidos al chef."],
-        ["Very tasty!", "¡Muy rico!"],
-        ["I loved it.", "Me encantó."],
-        ["It was perfect.", "Estaba de diez."]
+        [
+          "Everything was delicious.",
+          "Todo estaba delicioso."
+        ],
+        [
+          "The meal was very tasty.",
+          "La comida estuvo riquísima."
+        ],
+        [
+          "Excellent, thank you very much.",
+          "Excelente, muchas gracias."
+        ],
+        [
+          "My compliments to the chef.",
+          "Mis cumplidos al chef."
+        ],
+        [
+          "Very tasty!",
+          "¡Muy rico!"
+        ],
+        [
+          "I loved it.",
+          "Me encantó."
+        ],
+        [
+          "It was perfect.",
+          "Estaba de diez."
+        ]
       ]
     },
     {
       "id": "L11",
       "title": "Ordering food & eating out",
+      "progress": "not_started",
       "words": [
-        ["I'd like", "me gustaría"],
-        ["can I have", "me pone"],
-        ["for me", "para mí"],
-        ["the bill", "la cuenta"],
-        ["I'm hungry", "tengo hambre"],
-        ["I'm thirsty", "tengo sed"],
-        ["the menu", "la carta"],
-        ["a table for two", "una mesa para dos"],
-        ["to eat", "comer"],
-        ["to drink", "beber"]
+        [
+          "I'd like",
+          "me gustaría"
+        ],
+        [
+          "can I have",
+          "me pone"
+        ],
+        [
+          "for me",
+          "para mí"
+        ],
+        [
+          "the bill",
+          "la cuenta"
+        ],
+        [
+          "I'm hungry",
+          "tengo hambre"
+        ],
+        [
+          "I'm thirsty",
+          "tengo sed"
+        ],
+        [
+          "the menu",
+          "la carta"
+        ],
+        [
+          "a table for two",
+          "una mesa para dos"
+        ],
+        [
+          "to eat",
+          "comer"
+        ],
+        [
+          "to drink",
+          "beber"
+        ]
       ]
     },
     {
       "id": "L12",
       "title": "Tastes & dietary needs",
+      "progress": "not_started",
       "words": [
-        ["delicious", "rico"],
-        ["good", "bueno"],
-        ["bad", "malo"],
-        ["too much", "demasiado"],
-        ["enough", "suficiente"],
-        ["spicy", "picante"],
-        ["sweet", "dulce"],
-        ["gluten-free", "sin gluten"],
-        ["dairy-free", "sin lactosa"],
-        ["I'm allergic (m/f)", "soy alérgico/a"]
+        [
+          "delicious",
+          "rico"
+        ],
+        [
+          "good",
+          "bueno"
+        ],
+        [
+          "bad",
+          "malo"
+        ],
+        [
+          "too much",
+          "demasiado"
+        ],
+        [
+          "enough",
+          "suficiente"
+        ],
+        [
+          "spicy",
+          "picante"
+        ],
+        [
+          "sweet",
+          "dulce"
+        ],
+        [
+          "gluten-free",
+          "sin gluten"
+        ],
+        [
+          "dairy-free",
+          "sin lactosa"
+        ],
+        [
+          "I'm allergic (m/f)",
+          "soy alérgico/a"
+        ]
       ]
     },
     {
       "id": "L13",
       "title": "Telling time & times of day",
+      "progress": "not_started",
       "words": [
-        ["What time is it?", "¿Qué hora es?"],
-        ["It's one o'clock", "Es la una"],
-        ["It's three o'clock", "Son las tres"],
-        ["at... o'clock", "a las..."],
-        ["half past", "y media"],
-        ["the morning", "la mañana"],
-        ["the afternoon", "la tarde"],
-        ["the night / evening", "la noche"],
-        ["noon / midday", "el mediodía"],
-        ["midnight", "la medianoche"]
+        [
+          "What time is it?",
+          "¿Qué hora es?"
+        ],
+        [
+          "It's one o'clock",
+          "Es la una"
+        ],
+        [
+          "It's three o'clock",
+          "Son las tres"
+        ],
+        [
+          "at... o'clock",
+          "a las..."
+        ],
+        [
+          "half past",
+          "y media"
+        ],
+        [
+          "the morning",
+          "la mañana"
+        ],
+        [
+          "the afternoon",
+          "la tarde"
+        ],
+        [
+          "the night / evening",
+          "la noche"
+        ],
+        [
+          "noon / midday",
+          "el mediodía"
+        ],
+        [
+          "midnight",
+          "la medianoche"
+        ]
       ]
     },
     {
       "id": "L14",
       "title": "Relative time & duration",
+      "progress": "not_started",
       "words": [
-        ["now", "ahora"],
-        ["later", "luego"],
-        ["before", "antes"],
-        ["after", "después"],
-        ["soon", "pronto"],
-        ["late", "tarde"],
-        ["early", "temprano"],
-        ["a moment", "un momento"],
-        ["a while", "un rato"],
-        ["right away", "enseguida"],
-        ["already / now", "ya"]
+        [
+          "now",
+          "ahora"
+        ],
+        [
+          "later",
+          "luego"
+        ],
+        [
+          "before",
+          "antes"
+        ],
+        [
+          "after",
+          "después"
+        ],
+        [
+          "soon",
+          "pronto"
+        ],
+        [
+          "late",
+          "tarde"
+        ],
+        [
+          "early",
+          "temprano"
+        ],
+        [
+          "a moment",
+          "un momento"
+        ],
+        [
+          "a while",
+          "un rato"
+        ],
+        [
+          "right away",
+          "enseguida"
+        ],
+        [
+          "already / now",
+          "ya"
+        ]
       ]
     },
     {
       "id": "L15",
       "title": "Shopping & money",
+      "progress": "not_started",
       "words": [
-        ["How much does it cost?", "¿Cuánto cuesta?"],
-        ["expensive", "caro"],
-        ["cheap", "barato"],
-        ["a little more", "un poco más"],
-        ["a little less", "un poco menos"],
-        ["I'll take it", "me lo llevo"],
-        ["Do you have change?", "¿Tiene cambio?"],
-        ["by card", "con tarjeta"],
-        ["in cash", "en efectivo"],
-        ["the receipt", "el recibo"]
+        [
+          "How much does it cost?",
+          "¿Cuánto cuesta?"
+        ],
+        [
+          "expensive",
+          "caro"
+        ],
+        [
+          "cheap",
+          "barato"
+        ],
+        [
+          "a little more",
+          "un poco más"
+        ],
+        [
+          "a little less",
+          "un poco menos"
+        ],
+        [
+          "I'll take it",
+          "me lo llevo"
+        ],
+        [
+          "Do you have change?",
+          "¿Tiene cambio?"
+        ],
+        [
+          "by card",
+          "con tarjeta"
+        ],
+        [
+          "in cash",
+          "en efectivo"
+        ],
+        [
+          "the receipt",
+          "el recibo"
+        ]
       ]
     },
     {
       "id": "L16",
       "title": "Getting around",
+      "progress": "not_started",
       "words": [
-        ["the bus", "el autobús"],
-        ["the train", "el tren"],
-        ["the metro", "el metro"],
-        ["on foot", "a pie"],
-        ["by car", "en coche"],
-        ["Where is...?", "¿Dónde está...?"],
-        ["How do I get to...?", "¿Cómo llego a...?"],
-        ["near", "cerca"],
-        ["far", "lejos"],
-        ["to the right", "a la derecha"]
+        [
+          "the bus",
+          "el autobús"
+        ],
+        [
+          "the train",
+          "el tren"
+        ],
+        [
+          "the metro",
+          "el metro"
+        ],
+        [
+          "on foot",
+          "a pie"
+        ],
+        [
+          "by car",
+          "en coche"
+        ],
+        [
+          "Where is...?",
+          "¿Dónde está...?"
+        ],
+        [
+          "How do I get to...?",
+          "¿Cómo llego a...?"
+        ],
+        [
+          "near",
+          "cerca"
+        ],
+        [
+          "far",
+          "lejos"
+        ],
+        [
+          "to the right",
+          "a la derecha"
+        ]
       ]
     },
     {
       "id": "L17",
       "title": "Agreement & disagreement",
+      "progress": "not_started",
       "words": [
-        ["yes", "sí"],
-        ["of course", "claro"],
-        ["OK / sure", "vale"],
-        ["of course (emphatic)", "por supuesto"],
-        ["exactly", "exacto"],
-        ["no", "no"],
-        ["not at all", "para nada"],
-        ["absolutely not", "en absoluto"],
-        ["neither / not either", "tampoco"],
-        ["I don't know", "no sé"],
-        ["maybe", "quizás"],
-        ["it depends", "depende"]
+        [
+          "yes",
+          "sí"
+        ],
+        [
+          "of course",
+          "claro"
+        ],
+        [
+          "OK / sure",
+          "vale"
+        ],
+        [
+          "of course (emphatic)",
+          "por supuesto"
+        ],
+        [
+          "exactly",
+          "exacto"
+        ],
+        [
+          "no",
+          "no"
+        ],
+        [
+          "not at all",
+          "para nada"
+        ],
+        [
+          "absolutely not",
+          "en absoluto"
+        ],
+        [
+          "neither / not either",
+          "tampoco"
+        ],
+        [
+          "I don't know",
+          "no sé"
+        ],
+        [
+          "maybe",
+          "quizás"
+        ],
+        [
+          "it depends",
+          "depende"
+        ]
       ]
     },
     {
       "id": "L18",
       "title": "Feelings & states",
+      "progress": "not_started",
       "words": [
-        ["I'm cold", "tengo frío"],
-        ["I'm hot", "tengo calor"],
-        ["I'm tired (m/f)", "estoy cansado/a"],
-        ["it hurts", "me duele"],
-        ["I'm fine / well", "estoy bien"],
-        ["I'm not well", "estoy mal"],
-        ["happy (m/f)", "contento/a"],
-        ["worried (m/f)", "preocupado/a"],
-        ["scared", "tengo miedo"],
-        ["angry (m/f)", "enfadado/a"]
+        [
+          "I'm cold",
+          "tengo frío"
+        ],
+        [
+          "I'm hot",
+          "tengo calor"
+        ],
+        [
+          "I'm tired (m/f)",
+          "estoy cansado/a"
+        ],
+        [
+          "it hurts",
+          "me duele"
+        ],
+        [
+          "I'm fine / well",
+          "estoy bien"
+        ],
+        [
+          "I'm not well",
+          "estoy mal"
+        ],
+        [
+          "happy (m/f)",
+          "contento/a"
+        ],
+        [
+          "worried (m/f)",
+          "preocupado/a"
+        ],
+        [
+          "scared",
+          "tengo miedo"
+        ],
+        [
+          "angry (m/f)",
+          "enfadado/a"
+        ]
       ]
     },
     {
       "id": "L19",
       "title": "Greetings & farewells",
+      "progress": "not_started",
       "words": [
-        ["hello", "hola"],
-        ["good morning", "buenos días"],
-        ["good afternoon", "buenas tardes"],
-        ["good evening / night", "buenas noches"],
-        ["how are you?", "¿qué tal?"],
-        ["goodbye", "adiós"],
-        ["see you later", "hasta luego"],
-        ["see you tomorrow", "hasta mañana"],
-        ["see you", "nos vemos"],
-        ["take care", "cuídate"]
+        [
+          "hello",
+          "hola"
+        ],
+        [
+          "good morning",
+          "buenos días"
+        ],
+        [
+          "good afternoon",
+          "buenas tardes"
+        ],
+        [
+          "good evening / night",
+          "buenas noches"
+        ],
+        [
+          "how are you?",
+          "¿qué tal?"
+        ],
+        [
+          "goodbye",
+          "adiós"
+        ],
+        [
+          "see you later",
+          "hasta luego"
+        ],
+        [
+          "see you tomorrow",
+          "hasta mañana"
+        ],
+        [
+          "see you",
+          "nos vemos"
+        ],
+        [
+          "take care",
+          "cuídate"
+        ]
       ]
     },
     {
       "id": "L20",
       "title": "Quantities & comparisons",
+      "progress": "not_started",
       "words": [
-        ["big", "grande"],
-        ["small", "pequeño"],
-        ["a lot", "mucho"],
-        ["a little", "poco"],
-        ["quite / enough", "bastante"],
-        ["more", "más"],
-        ["less", "menos"],
-        ["the same", "igual"],
-        ["better", "mejor"],
-        ["worse", "peor"]
+        [
+          "big",
+          "grande"
+        ],
+        [
+          "small",
+          "pequeño"
+        ],
+        [
+          "a lot",
+          "mucho"
+        ],
+        [
+          "a little",
+          "poco"
+        ],
+        [
+          "quite / enough",
+          "bastante"
+        ],
+        [
+          "more",
+          "más"
+        ],
+        [
+          "less",
+          "menos"
+        ],
+        [
+          "the same",
+          "igual"
+        ],
+        [
+          "better",
+          "mejor"
+        ],
+        [
+          "worse",
+          "peor"
+        ]
       ]
     },
     {
       "id": "L21",
       "title": "People & relationships",
+      "progress": "not_started",
       "words": [
-        ["my partner", "mi pareja"],
-        ["my son / daughter", "mi hijo/a"],
-        ["my mother", "mi madre"],
-        ["my father", "mi padre"],
-        ["he", "él"],
-        ["she", "ella"],
-        ["they", "ellos"],
-        ["my friend (m/f)", "mi amigo/a"],
-        ["sir / Mr.", "el señor"],
-        ["ma'am / Mrs.", "la señora"]
+        [
+          "my partner",
+          "mi pareja"
+        ],
+        [
+          "my son / daughter",
+          "mi hijo/a"
+        ],
+        [
+          "my mother",
+          "mi madre"
+        ],
+        [
+          "my father",
+          "mi padre"
+        ],
+        [
+          "he",
+          "él"
+        ],
+        [
+          "she",
+          "ella"
+        ],
+        [
+          "they",
+          "ellos"
+        ],
+        [
+          "my friend (m/f)",
+          "mi amigo/a"
+        ],
+        [
+          "sir / Mr.",
+          "el señor"
+        ],
+        [
+          "ma'am / Mrs.",
+          "la señora"
+        ]
       ]
     },
     {
       "id": "L22",
       "title": "Useful everyday verbs",
+      "progress": "not_started",
       "words": [
-        ["I want", "quiero"],
-        ["I need", "necesito"],
-        ["I have", "tengo"],
-        ["I'm looking for", "busco"],
-        ["I can", "puedo"],
-        ["I know (a fact)", "sé"],
-        ["I know (a person/place)", "conozco"],
-        ["I like", "me gusta"],
-        ["I prefer", "prefiero"],
-        ["I love (it)", "me encanta"]
+        [
+          "I want",
+          "quiero"
+        ],
+        [
+          "I need",
+          "necesito"
+        ],
+        [
+          "I have",
+          "tengo"
+        ],
+        [
+          "I'm looking for",
+          "busco"
+        ],
+        [
+          "I can",
+          "puedo"
+        ],
+        [
+          "I know (a fact)",
+          "sé"
+        ],
+        [
+          "I know (a person/place)",
+          "conozco"
+        ],
+        [
+          "I like",
+          "me gusta"
+        ],
+        [
+          "I prefer",
+          "prefiero"
+        ],
+        [
+          "I love (it)",
+          "me encanta"
+        ]
       ]
     }
   ]
