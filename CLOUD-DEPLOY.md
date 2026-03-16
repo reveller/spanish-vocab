@@ -7,7 +7,7 @@ by subdomain via host-level nginx.
 **Region**: `us-east-1` (Virginia)
 **Domain**: `vocab.n2deep.co`
 **Instance**: `streaming-tracker` (shared with Streaming Tracker)
-**Static IP**: `13.223.202.61`
+**Static IP**: `<STATIC_IP>`
 
 ---
 
@@ -35,7 +35,7 @@ by subdomain via host-level nginx.
 ## SSH Access
 
 ```bash
-ssh -i ~/.ssh/lightsail-streaming.pem ubuntu@13.223.202.61
+ssh -i ~/.ssh/lightsail-streaming.pem ubuntu@<STATIC_IP>
 ```
 
 ---
@@ -46,7 +46,7 @@ These steps document how the app was deployed for reference.
 
 ### 1. DNS
 
-Added an **A record** for `vocab` in GoDaddy DNS for `n2deep.co` pointing to `13.223.202.61`.
+Added an **A record** for `vocab` in GoDaddy DNS for `n2deep.co` pointing to `<STATIC_IP>`.
 
 ### 2. Clone and Configure
 
@@ -128,7 +128,7 @@ Path: /etc/letsencrypt/live/tracker.n2deep.co/
 ## Deploying Updates
 
 ```bash
-ssh -i ~/.ssh/lightsail-streaming.pem ubuntu@13.223.202.61
+ssh -i ~/.ssh/lightsail-streaming.pem ubuntu@<STATIC_IP>
 cd /home/ubuntu/spanish-vocab
 git pull
 docker compose up -d --build
@@ -142,14 +142,67 @@ docker compose build --no-cache && docker compose up -d
 
 ---
 
+## Logs
+
+The app logs auth events and data mutations to stdout, captured by Docker.
+
+**Events logged:**
+
+| Level | Event | Details |
+|-------|-------|---------|
+| WARNING | Login failed | email, IP |
+| WARNING | Unauthorized API access | method, path, IP |
+| INFO | Login success | email, IP |
+| INFO | Logout | email, IP |
+| INFO | Lesson created/deleted | lesson ID, title, user |
+| INFO | Word added/deleted | word details, lesson, user |
+
+**Viewing logs (from the instance):**
+
+```bash
+# Tail all logs in real time
+docker compose -f /home/ubuntu/spanish-vocab/docker-compose.yml logs -f
+
+# Last 50 lines
+docker compose -f /home/ubuntu/spanish-vocab/docker-compose.yml logs --tail 50
+
+# Filter for login failures
+docker compose -f /home/ubuntu/spanish-vocab/docker-compose.yml logs | grep "Login failed"
+
+# Filter for all auth events (login/logout/unauthorized)
+docker compose -f /home/ubuntu/spanish-vocab/docker-compose.yml logs | grep -E "Login|Logout|Unauthorized"
+```
+
+**Viewing logs (from your local machine):**
+
+```bash
+ssh -i ~/.ssh/lightsail-streaming.pem ubuntu@<STATIC_IP> \
+  "docker compose -f /home/ubuntu/spanish-vocab/docker-compose.yml logs -f"
+```
+
+**Nginx access logs** (all HTTP requests, including IPs and status codes):
+
+```bash
+# Tail nginx access log
+sudo tail -f /var/log/nginx/access.log
+
+# Filter for vocab subdomain
+sudo grep "vocab.n2deep.co" /var/log/nginx/access.log
+
+# Nginx error log
+sudo tail -f /var/log/nginx/error.log
+```
+
+> **Note**: Docker logs reset when the container is recreated (`docker compose up -d --build`).
+> Nginx logs are rotated automatically by logrotate on the host.
+
+---
+
 ## Useful Commands
 
 ```bash
 # View container status
 docker compose -f /home/ubuntu/spanish-vocab/docker-compose.yml ps
-
-# View logs
-docker compose -f /home/ubuntu/spanish-vocab/docker-compose.yml logs -f
 
 # Restart
 docker compose -f /home/ubuntu/spanish-vocab/docker-compose.yml restart
@@ -176,7 +229,7 @@ curl -s http://localhost:5050/api/health
 To remove the vocab app from the instance without affecting the streaming tracker:
 
 ```bash
-ssh -i ~/.ssh/lightsail-streaming.pem ubuntu@13.223.202.61
+ssh -i ~/.ssh/lightsail-streaming.pem ubuntu@<STATIC_IP>
 
 # Stop and remove containers/volumes
 cd /home/ubuntu/spanish-vocab
