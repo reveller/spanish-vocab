@@ -7,6 +7,9 @@ services:
       - vocab-data:/data
     environment:
       - DATABASE_PATH=/data/vocab.db
+      - SECRET_KEY=${SECRET_KEY:-change-me-in-production}
+      - SEED_USER_EMAIL=${SEED_USER_EMAIL:-}
+      - SEED_USER_PASSWORD=${SEED_USER_PASSWORD:-}
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5050/api/health')"]
       interval: 30s

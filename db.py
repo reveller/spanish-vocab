@@ -1,6 +1,7 @@
 import sqlite3
 import json
 import os
+from werkzeug.security import generate_password_hash, check_password_hash
 
 DATABASE_PATH = os.environ.get('DATABASE_PATH', '/data/vocab.db')
 
@@ -28,9 +29,33 @@ def init_db():
             sort_order INTEGER NOT NULL,
             FOREIGN KEY (lesson_id) REFERENCES lessons(id) ON DELETE CASCADE
         );
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL UNIQUE,
+            password_hash TEXT NOT NULL
+        );
     """)
     conn.commit()
     conn.close()
+
+def seed_user(email, password):
+    conn = get_db()
+    exists = conn.execute("SELECT 1 FROM users WHERE email = ?", (email,)).fetchone()
+    if not exists:
+        conn.execute(
+            "INSERT INTO users (email, password_hash) VALUES (?, ?)",
+            (email, generate_password_hash(password))
+        )
+        conn.commit()
+    conn.close()
+
+def authenticate_user(email, password):
+    conn = get_db()
+    user = conn.execute("SELECT * FROM users WHERE email = ?", (email,)).fetchone()
+    conn.close()
+    if user and check_password_hash(user['password_hash'], password):
+        return {'id': user['id'], 'email': user['email']}
+    return None
 
 def seed_from_json(json_path):
     conn = get_db()

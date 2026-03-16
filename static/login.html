@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — Spanish Vocab Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FAF6F1;
+    --surface: #FFFFFF;
+    --surface-warm: #F5F0EA;
+    --border: #E2DDD6;
+    --border-strong: #C9C2B8;
+    --text: #2C2824;
+    --text2: #7A746E;
+    --text3: #A39D96;
+
+    --terracotta: #C4562A;
+    --terracotta-light: #F8ECE7;
+    --terracotta-hover: #D4673E;
+
+    --red: #9B3A3A;
+    --red-bg: #FDF0F0;
+    --red-border: #DEB8B8;
+
+    --radius: 6px;
+    --radius-lg: 10px;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #C4562A 0%, #B8860B 50%, #2B6B45 100%);
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 24px rgba(44, 40, 36, 0.08);
+  }
+
+  .login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .login-header h1 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    line-height: 1.1;
+  }
+
+  .login-header h1 span {
+    color: var(--terracotta);
+  }
+
+  .login-header p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text2);
+    margin-top: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text2);
+    margin-bottom: 6px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 300;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus {
+    border-color: var(--terracotta);
+  }
+
+  .form-group input::placeholder {
+    color: var(--text3);
+  }
+
+  .error-msg {
+    background: var(--red-bg);
+    border: 1px solid var(--red-border);
+    color: var(--red);
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    margin-bottom: 1.25rem;
+    display: none;
+  }
+
+  .error-msg.visible {
+    display: block;
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid var(--terracotta);
+    border-radius: var(--radius);
+    background: var(--terracotta);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-top: 0.5rem;
+  }
+
+  .login-btn:hover {
+    background: var(--terracotta-hover);
+    border-color: var(--terracotta-hover);
+  }
+
+  .login-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .login-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 12px;
+    color: var(--text3);
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+
+<div class="login-card">
+  <div class="login-header">
+    <h1>Vocabulario <span>Espa&ntilde;ol</span></h1>
+    <p>Sign in to continue</p>
+  </div>
+
+  <div class="error-msg" id="error-msg"></div>
+
+  <form id="login-form" onsubmit="handleLogin(event)">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com" required autofocus />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" required />
+    </div>
+    <button type="submit" class="login-btn" id="login-btn">Sign in</button>
+  </form>
+
+  <div class="login-footer">Personal vocabulary tracker</div>
+</div>
+
+<script>
+async function handleLogin(e) {
+  e.preventDefault();
+  const btn = document.getElementById('login-btn');
+  const errEl = document.getElementById('error-msg');
+  errEl.classList.remove('visible');
+  btn.disabled = true;
+  btn.textContent = 'Signing in...';
+
+  try {
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+      })
+    });
+    if (res.ok) {
+      window.location.href = '/';
+    } else {
+      const data = await res.json();
+      errEl.textContent = data.error || 'Invalid email or password';
+      errEl.classList.add('visible');
+    }
+  } catch {
+    errEl.textContent = 'Unable to connect to server';
+    errEl.classList.add('visible');
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Sign in';
+}
+</script>
+</body>
+</html>
