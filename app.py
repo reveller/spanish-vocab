@@ -95,7 +95,12 @@ def update_progress(lesson_id):
 @login_required
 def add_word(lesson_id):
     body = request.json
-    if db_add_word(lesson_id, body['en'], body['es']):
+    if db_add_word(
+        lesson_id, body['en'], body['es'],
+        example=body.get('example') or None,
+        note=body.get('note') or None,
+        region=body.get('region') or None,
+    ):
         log.info('Word added: "%s" → "%s" in %s by %s',
                  body['en'], body['es'], lesson_id, session.get('email'))
         return jsonify({'ok': True}), 201

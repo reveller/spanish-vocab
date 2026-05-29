@@ -306,20 +306,54 @@
   .word-en:hover .delete-word-btn { opacity: 1; }
   .delete-word-btn:hover { background: #FDF0F0 !important; }
 
-  .word-es {
+  .word-reveal {
     display: none;
+    flex-direction: column;
+    background: var(--terracotta-light);
+  }
+  .word-reveal.open { display: flex; }
+
+  .word-es {
     padding: 10px 14px;
     font-size: 14px;
     font-weight: 500;
     color: var(--terracotta);
-    background: var(--terracotta-light);
     cursor: pointer;
     user-select: none;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
   }
-  .word-es.open { display: flex; }
+
+  .word-extras {
+    padding: 0 14px 10px;
+    border-top: 1px dashed rgba(196, 86, 42, 0.25);
+    margin: 0 14px;
+    padding-top: 8px;
+  }
+  .word-example {
+    font-size: 13px;
+    color: var(--text2);
+    font-style: italic;
+    line-height: 1.45;
+  }
+  .word-note {
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.45;
+    background: var(--surface);
+    padding: 6px 10px;
+    border-radius: 4px;
+    border-left: 2px solid var(--amber);
+  }
+  .word-flags {
+    font-size: 13px;
+    margin-left: 6px;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
 
   .speak-btn {
     flex-shrink: 0;
@@ -482,6 +516,22 @@ function speak(text) {
   window.speechSynthesis.speak(utt);
 }
 
+function regionToFlags(region) {
+  if (!region) return '';
+  return region.split(',').map(code => {
+    const c = code.trim().toUpperCase();
+    if (c.length !== 2) return '';
+    return String.fromCodePoint(0x1F1E6 + c.charCodeAt(0) - 65) +
+           String.fromCodePoint(0x1F1E6 + c.charCodeAt(1) - 65);
+  }).join(' ');
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, ch => (
+    {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]
+  ));
+}
+
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -554,17 +604,29 @@ function buildLesson(lesson) {
 }
 
 function buildWordRow(lessonId, word, index) {
-  const [en, es] = word;
+  const en = word.en;
+  const es = word.es;
+  const example = word.example;
+  const note = word.note;
+  const flags = regionToFlags(word.region);
   const safeEs = es.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  const flagsHtml = flags ? `<span class="word-flags">${flags}</span>` : '';
+  const extrasHtml = (example || note) ? `
+        <div class="word-extras">
+          ${example ? `<div class="word-example">${escapeHtml(example)}</div>` : ''}
+          ${note ? `<div class="word-note">${escapeHtml(note)}</div>` : ''}
+        </div>` : '';
   return `
     <div class="word-row" id="word-${lessonId}-${index}">
       <div class="word-en" onclick="toggleWord(this)">
-        <span class="word-en-text">${en}</span>
+        <span class="word-en-text">${escapeHtml(en)}${flagsHtml}</span>
         <button class="delete-word-btn" onclick="event.stopPropagation(); deleteWord('${lessonId}', ${index})">&#10005;</button>
       </div>
-      <div class="word-es" onclick="toggleWord(this.previousElementSibling)">
-        <span>${es}</span>
-        <button class="speak-btn" title="Hear pronunciation" onclick="event.stopPropagation(); speak('${safeEs}')">&#9654;</button>
+      <div class="word-reveal">
+        <div class="word-es" onclick="toggleWord(this.parentElement.previousElementSibling)">
+          <span>${escapeHtml(es)}</span>
+          <button class="speak-btn" title="Hear pronunciation" onclick="event.stopPropagation(); speak('${safeEs}')">&#9654;</button>
+        </div>${extrasHtml}
       </div>
     </div>`;
 }
@@ -632,7 +694,7 @@ async function addWord(lessonId) {
     body: JSON.stringify({ en, es })
   });
   const lesson = lessons.find(l => l.id === lessonId);
-  lesson.words.push([en, es]);
+  lesson.words.push({ en, es, example: null, note: null, region: null });
   enInput.value = '';
   esInput.value = '';
   render();

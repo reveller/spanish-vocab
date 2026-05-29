@@ -5,38 +5,15 @@
       "title": "Directions",
       "progress": "still_learning",
       "words": [
-        [
-          "here",
-          "aquí"
-        ],
-        [
-          "there",
-          "allí"
-        ],
-        [
-          "left",
-          "izquierda"
-        ],
-        [
-          "right",
-          "derecha"
-        ],
-        [
-          "up",
-          "arriba"
-        ],
-        [
-          "down",
-          "abajo"
-        ],
-        [
-          "straight ahead (informal)",
-          "todo recto"
-        ],
-        [
-          "straight ahead (formal)",
-          "todo derecho"
-        ]
+        { "en": "here", "es": "aquí", "example": "Estoy aquí — I'm here", "note": null, "region": null },
+        { "en": "there", "es": "allí", "example": "Está allí — It's there", "note": null, "region": null },
+        { "en": "left", "es": "izquierda", "example": "Gira a la izquierda — Turn left", "note": null, "region": null },
+        { "en": "right", "es": "derecha", "example": "A la derecha — To the right", "note": null, "region": null },
+        { "en": "up / above", "es": "arriba", "example": "Está arriba — It's up there", "note": null, "region": null },
+        { "en": "down / below", "es": "abajo", "example": "Ven abajo — Come down", "note": null, "region": null },
+        { "en": "straight ahead", "es": "todo derecho", "example": "Sigue todo derecho — Keep going straight", "note": "The default form across Latin America", "region": null },
+        { "en": "straight ahead", "es": "derecho", "example": "Siga derecho dos cuadras — Go straight for two blocks", "note": "Common short form in Mexico and Central America. 'Cuadra' = block", "region": null },
+        { "en": "straight ahead", "es": "todo recto", "example": "Sigue todo recto — Keep going straight", "note": "The Spanish form — you'll mostly hear this in Spain", "region": "ES" }
       ]
     },
     {
@@ -44,34 +21,13 @@
       "title": "Quantity / Emphasis / Time",
       "progress": "still_learning",
       "words": [
-        [
-          "one / a",
-          "uno/una"
-        ],
-        [
-          "only, just",
-          "solo"
-        ],
-        [
-          "once",
-          "una vez"
-        ],
-        [
-          "again",
-          "otra vez"
-        ],
-        [
-          "sometimes",
-          "a veces"
-        ],
-        [
-          "this time",
-          "esta vez"
-        ],
-        [
-          "next time",
-          "la próxima vez"
-        ]
+        { "en": "one / a (m/f)", "es": "uno / una", "example": "Dame uno — Give me one", "note": null, "region": null },
+        { "en": "only / just / alone", "es": "solo", "example": "Solo quiero agua — I just want water", "note": null, "region": null },
+        { "en": "once / one time", "es": "una vez", "example": "Solo una vez — Just once", "note": null, "region": null },
+        { "en": "again / another time", "es": "otra vez", "example": "¿Puedes repetir otra vez? — Can you repeat again?", "note": "One of the most useful phrases day-to-day", "region": null },
+        { "en": "sometimes", "es": "a veces", "example": "A veces como fuera — Sometimes I eat out", "note": null, "region": null },
+        { "en": "this time", "es": "esta vez", "example": "Esta vez yo pago — This time I'm paying", "note": null, "region": null },
+        { "en": "next time", "es": "la próxima vez", "example": "La próxima vez te aviso — Next time I'll let you know", "note": "Próximo/a = next/upcoming. Also: el próximo lunes = next Monday", "region": null }
       ]
     },
     {
@@ -79,46 +35,16 @@
       "title": "Days of the week",
       "progress": "still_learning",
       "words": [
-        [
-          "Monday",
-          "lunes"
-        ],
-        [
-          "Tuesday",
-          "martes"
-        ],
-        [
-          "Wednesday",
-          "miércoles"
-        ],
-        [
-          "Thursday",
-          "jueves"
-        ],
-        [
-          "Friday",
-          "viernes"
-        ],
-        [
-          "Saturday",
-          "sábado"
-        ],
-        [
-          "Sunday",
-          "domingo"
-        ],
-        [
-          "today is...",
-          "hoy es..."
-        ],
-        [
-          "tomorrow is...",
-          "mañana es..."
-        ],
-        [
-          "yesterday was...",
-          "ayer fue..."
-        ]
+        { "en": "Monday", "es": "lunes", "example": "El lunes voy al mercado — Monday I'm going to the market", "note": null, "region": null },
+        { "en": "Tuesday", "es": "martes", "example": "Nos vemos el martes — See you Tuesday", "note": null, "region": null },
+        { "en": "Wednesday", "es": "miércoles", "example": "Miércoles es el día más largo — Wednesday is the longest day", "note": null, "region": null },
+        { "en": "Thursday", "es": "jueves", "example": "El jueves tengo una cita — Thursday I have an appointment", "note": null, "region": null },
+        { "en": "Friday", "es": "viernes", "example": "¡Por fin es viernes! — Finally it's Friday!", "note": null, "region": null },
+        { "en": "Saturday", "es": "sábado", "example": "El sábado descansamos — Saturday we rest", "note": null, "region": null },
+        { "en": "Sunday", "es": "domingo", "example": "El domingo es día de familia — Sunday is family day", "note": null, "region": null },
+        { "en": "today is...", "es": "hoy es...", "example": "Hoy es lunes — Today is Monday", "note": null, "region": null },
+        { "en": "tomorrow is...", "es": "mañana es...", "example": "Mañana es martes — Tomorrow is Tuesday", "note": null, "region": null },
+        { "en": "yesterday was...", "es": "ayer fue...", "example": "Ayer fue domingo — Yesterday was Sunday", "note": null, "region": null }
       ]
     },
     {
@@ -126,34 +52,16 @@
       "title": "Week phrases",
       "progress": "not_started",
       "words": [
-        [
-          "this week",
-          "esta semana"
-        ],
-        [
-          "last week",
-          "la semana pasada"
-        ],
-        [
-          "next week",
-          "la semana que viene"
-        ],
-        [
-          "the weekend",
-          "el fin de semana"
-        ],
-        [
-          "on weekdays",
-          "entre semana"
-        ],
-        [
-          "a week ago",
-          "hace una semana"
-        ],
-        [
-          "in a week's time",
-          "dentro de una semana"
-        ]
+        { "en": "this week", "es": "esta semana", "example": "Esta semana estoy muy ocupado — This week I'm very busy", "note": null, "region": null },
+        { "en": "last week", "es": "la semana pasada", "example": "La semana pasada fue genial — Last week was great", "note": null, "region": null },
+        { "en": "next week", "es": "la semana que viene", "example": "La semana que viene te llamo — I'll call you next week", "note": null, "region": null },
+        { "en": "next week (alt)", "es": "la próxima semana", "example": "La próxima semana viajo — Next week I travel", "note": "Equally common in Latin America", "region": null },
+        { "en": "the weekend", "es": "el fin de semana", "example": "¿Qué haces el fin de semana? — What are you doing this weekend?", "note": null, "region": null },
+        { "en": "on weekends", "es": "los fines de semana", "example": "Los fines de semana descanso — On weekends I rest", "note": null, "region": null },
+        { "en": "on weekdays / during the week", "es": "entre semana", "example": "Entre semana trabajo mucho — During the week I work a lot", "note": null, "region": null },
+        { "en": "a week ago", "es": "hace una semana", "example": "Llegué hace una semana — I arrived a week ago", "note": null, "region": null },
+        { "en": "in a week's time", "es": "dentro de una semana", "example": "Dentro de una semana nos vamos — In a week's time we leave", "note": null, "region": null },
+        { "en": "What day is today?", "es": "¿Qué día es hoy?", "example": "¿Qué día es hoy? Hoy es viernes — What day is today? Today is Friday", "note": null, "region": null }
       ]
     },
     {
@@ -161,86 +69,26 @@
       "title": "Numbers 0–19",
       "progress": "not_started",
       "words": [
-        [
-          "0",
-          "cero"
-        ],
-        [
-          "1",
-          "uno"
-        ],
-        [
-          "2",
-          "dos"
-        ],
-        [
-          "3",
-          "tres"
-        ],
-        [
-          "4",
-          "cuatro"
-        ],
-        [
-          "5",
-          "cinco"
-        ],
-        [
-          "6",
-          "seis"
-        ],
-        [
-          "7",
-          "siete"
-        ],
-        [
-          "8",
-          "ocho"
-        ],
-        [
-          "9",
-          "nueve"
-        ],
-        [
-          "10",
-          "diez"
-        ],
-        [
-          "11",
-          "once"
-        ],
-        [
-          "12",
-          "doce"
-        ],
-        [
-          "13",
-          "trece"
-        ],
-        [
-          "14",
-          "catorce"
-        ],
-        [
-          "15",
-          "quince"
-        ],
-        [
-          "16",
-          "dieciséis"
-        ],
-        [
-          "17",
-          "diecisiete"
-        ],
-        [
-          "18",
-          "dieciocho"
-        ],
-        [
-          "19",
-          "diecinueve"
-        ]
+        { "en": "0", "es": "cero", "example": "Cero grados — Zero degrees", "note": null, "region": null },
+        { "en": "1", "es": "uno", "example": "Solo uno — Just one", "note": null, "region": null },
+        { "en": "2", "es": "dos", "example": "Dos cafés, por favor — Two coffees, please", "note": null, "region": null },
+        { "en": "3", "es": "tres", "example": "Tres días — Three days", "note": null, "region": null },
+        { "en": "4", "es": "cuatro", "example": "Cuatro personas — Four people", "note": null, "region": null },
+        { "en": "5", "es": "cinco", "example": "Cinco minutos — Five minutes", "note": null, "region": null },
+        { "en": "6", "es": "seis", "example": "Seis pesos — Six pesos", "note": null, "region": null },
+        { "en": "7", "es": "siete", "example": "Siete días a la semana — Seven days a week", "note": null, "region": null },
+        { "en": "8", "es": "ocho", "example": "Ocho horas de sueño — Eight hours of sleep", "note": null, "region": null },
+        { "en": "9", "es": "nueve", "example": "Nueve de la mañana — Nine in the morning", "note": null, "region": null },
+        { "en": "10", "es": "diez", "example": "Diez minutos más — Ten more minutes", "note": null, "region": null },
+        { "en": "11", "es": "once", "example": "Once personas — Eleven people", "note": null, "region": null },
+        { "en": "12", "es": "doce", "example": "Doce del mediodía — Twelve noon", "note": null, "region": null },
+        { "en": "13", "es": "trece", "example": "Trece años — Thirteen years", "note": null, "region": null },
+        { "en": "14", "es": "catorce", "example": "Catorce días — Fourteen days", "note": null, "region": null },
+        { "en": "15", "es": "quince", "example": "Quince minutos — Fifteen minutes", "note": null, "region": null },
+        { "en": "16", "es": "dieciséis", "example": "Dieciséis pesos — Sixteen pesos", "note": "diez + y + seis fused into one word", "region": null },
+        { "en": "17", "es": "diecisiete", "example": "Diecisiete años — Seventeen years", "note": "diez + y + siete fused", "region": null },
+        { "en": "18", "es": "dieciocho", "example": "Dieciocho grados — Eighteen degrees", "note": "diez + y + ocho fused", "region": null },
+        { "en": "19", "es": "diecinueve", "example": "Diecinueve personas — Nineteen people", "note": "diez + y + nueve fused", "region": null }
       ]
     },
     {
@@ -248,54 +96,20 @@
       "title": "Round numbers & counting",
       "progress": "not_started",
       "words": [
-        [
-          "20",
-          "veinte"
-        ],
-        [
-          "30",
-          "treinta"
-        ],
-        [
-          "40",
-          "cuarenta"
-        ],
-        [
-          "50",
-          "cincuenta"
-        ],
-        [
-          "60",
-          "sesenta"
-        ],
-        [
-          "70",
-          "setenta"
-        ],
-        [
-          "80",
-          "ochenta"
-        ],
-        [
-          "90",
-          "noventa"
-        ],
-        [
-          "100",
-          "cien"
-        ],
-        [
-          "200",
-          "doscientos"
-        ],
-        [
-          "1,000",
-          "mil"
-        ],
-        [
-          "1,000,000",
-          "un millón"
-        ]
+        { "en": "20", "es": "veinte", "example": "Veinte pesos — Twenty pesos", "note": "21–29 fuse into one word: veintiuno, veintidós, veintitrés...", "region": null },
+        { "en": "21", "es": "veintiuno", "example": "Veintiuno de marzo — March 21st", "note": "veinte + uno → veintiuno (one word)", "region": null },
+        { "en": "30", "es": "treinta", "example": "Treinta minutos — Thirty minutes", "note": "From 31 up: tens + y + unit, always two words. treinta y uno, treinta y dos...", "region": null },
+        { "en": "32", "es": "treinta y dos", "example": "Treinta y dos grados — Thirty-two degrees", "note": "Pattern: [tens] + y + [unit]. Works for all numbers 31–99.", "region": null },
+        { "en": "40", "es": "cuarenta", "example": "Cuarenta años — Forty years", "note": "cuarenta y tres, cuarenta y cuatro...", "region": null },
+        { "en": "50", "es": "cincuenta", "example": "Cincuenta metros — Fifty metres", "note": "cincuenta y cinco, cincuenta y seis...", "region": null },
+        { "en": "60", "es": "sesenta", "example": "Sesenta segundos — Sixty seconds", "note": "sesenta y siete, sesenta y ocho...", "region": null },
+        { "en": "70", "es": "setenta", "example": "Setenta kilómetros — Seventy kilometres", "note": "setenta y uno, setenta y dos...", "region": null },
+        { "en": "80", "es": "ochenta", "example": "Ochenta personas — Eighty people", "note": "ochenta y nueve, ochenta y ocho...", "region": null },
+        { "en": "90", "es": "noventa", "example": "Noventa días — Ninety days", "note": "noventa y cinco, noventa y seis...", "region": null },
+        { "en": "100", "es": "cien / ciento", "example": "Cien pesos — One hundred pesos", "note": "'Cien' stands alone. 'Ciento' before more: ciento veinte = 120", "region": null },
+        { "en": "200", "es": "doscientos", "example": "Doscientos metros — Two hundred metres", "note": null, "region": null },
+        { "en": "1,000", "es": "mil", "example": "Mil gracias — A thousand thanks", "note": "mil doscientos = 1,200 — just stack the numbers", "region": null },
+        { "en": "1,000,000", "es": "un millón", "example": "Un millón de razones — A million reasons", "note": null, "region": null }
       ]
     },
     {
@@ -303,66 +117,24 @@
       "title": "Ordinals & fractions",
       "progress": "not_started",
       "words": [
-        [
-          "1st",
-          "primero"
-        ],
-        [
-          "2nd",
-          "segundo"
-        ],
-        [
-          "3rd",
-          "tercero"
-        ],
-        [
-          "4th",
-          "cuarto"
-        ],
-        [
-          "5th",
-          "quinto"
-        ],
-        [
-          "6th",
-          "sexto"
-        ],
-        [
-          "7th",
-          "séptimo"
-        ],
-        [
-          "8th",
-          "octavo"
-        ],
-        [
-          "9th",
-          "noveno"
-        ],
-        [
-          "10th",
-          "décimo"
-        ],
-        [
-          "half (adj, e.g. half an hour)",
-          "medio/media"
-        ],
-        [
-          "quarter",
-          "cuarto"
-        ],
-        [
-          "half (noun, e.g. the half)",
-          "mitad"
-        ],
-        [
-          "three quarters",
-          "tres cuartos"
-        ],
-        [
-          "full",
-          "lleno/a"
-        ]
+        { "en": "1st", "es": "primero / primera", "example": "El primero de enero — The first of January", "note": "Shortens before a noun: el primer día", "region": null },
+        { "en": "2nd", "es": "segundo / segunda", "example": "El segundo piso — The second floor", "note": null, "region": null },
+        { "en": "3rd", "es": "tercero / tercera", "example": "La tercera vez — The third time", "note": "Shortens before a noun: el tercer piso", "region": null },
+        { "en": "4th", "es": "cuarto / cuarta", "example": "El cuarto día — The fourth day", "note": "Same word as 'a quarter' — useful overlap!", "region": null },
+        { "en": "5th", "es": "quinto / quinta", "example": "La quinta planta — The fifth floor", "note": null, "region": null },
+        { "en": "6th", "es": "sexto / sexta", "example": "El sexto sentido — The sixth sense", "note": null, "region": null },
+        { "en": "7th", "es": "séptimo / séptima", "example": "El séptimo día — The seventh day", "note": null, "region": null },
+        { "en": "8th", "es": "octavo / octava", "example": "El octavo lugar — Eighth place", "note": null, "region": null },
+        { "en": "9th", "es": "noveno / novena", "example": "El noveno mes — The ninth month", "note": null, "region": null },
+        { "en": "10th", "es": "décimo / décima", "example": "El décimo aniversario — The tenth anniversary", "note": null, "region": null },
+        { "en": "last / final", "es": "último / última", "example": "El último tren — The last train", "note": "More common in everyday speech than sexto, séptimo, etc.", "region": null },
+        { "en": "half (adj, e.g. half an hour)", "es": "medio / media", "example": "Media hora — Half an hour", "note": null, "region": null },
+        { "en": "half (noun, e.g. the half)", "es": "la mitad", "example": "La mitad del tiempo — Half the time", "note": null, "region": null },
+        { "en": "a third (1/3)", "es": "un tercio", "example": "Un tercio del precio — A third of the price", "note": null, "region": null },
+        { "en": "a quarter (1/4)", "es": "un cuarto", "example": "Un cuarto de hora — A quarter of an hour", "note": "Cuarto = fourth AND a quarter — same word", "region": null },
+        { "en": "two thirds (2/3)", "es": "dos tercios", "example": "Dos tercios del grupo — Two thirds of the group", "note": null, "region": null },
+        { "en": "three quarters", "es": "tres cuartos", "example": "Tres cuartos de hora — Three quarters of an hour", "note": "Very common for telling time", "region": null },
+        { "en": "full", "es": "lleno / llena", "example": "El vaso está lleno — The glass is full", "note": null, "region": null }
       ]
     },
     {
@@ -370,42 +142,16 @@
       "title": "Excuse me & polite phrases",
       "progress": "not_started",
       "words": [
-        [
-          "Excuse me (informal)",
-          "Perdona"
-        ],
-        [
-          "Excuse me (formal)",
-          "Perdone"
-        ],
-        [
-          "Hey / Listen",
-          "Oye"
-        ],
-        [
-          "Please",
-          "Por favor"
-        ],
-        [
-          "With your permission / Coming through",
-          "Con permiso"
-        ],
-        [
-          "Coming through (direct)",
-          "Paso"
-        ],
-        [
-          "I'm sorry",
-          "Lo siento"
-        ],
-        [
-          "Sorry (informal)",
-          "Disculpa"
-        ],
-        [
-          "Sorry (formal)",
-          "Disculpe"
-        ]
+        { "en": "Excuse me (informal)", "es": "Perdona", "example": "Perdona, ¿tienes un momento? — Excuse me, do you have a moment?", "note": null, "region": null },
+        { "en": "Excuse me (formal)", "es": "Perdone", "example": "Perdone, ¿dónde está el baño? — Excuse me, where's the bathroom?", "note": null, "region": null },
+        { "en": "Excuse me / Sorry", "es": "Perdón", "example": "Perdón, no te oí — Sorry, I didn't hear you", "note": "The most universal everyday form across Latin America", "region": null },
+        { "en": "Hey / Listen", "es": "Oye", "example": "Oye, ¿me ayudas? — Hey, can you help me?", "note": null, "region": null },
+        { "en": "Please", "es": "Por favor", "example": "Un café, por favor — A coffee, please", "note": null, "region": null },
+        { "en": "With your permission / Coming through", "es": "Con permiso", "example": "Con permiso, voy a pasar — Excuse me, I'm coming through", "note": "Very common in Mexico and Central America when passing in front of someone", "region": null },
+        { "en": "Coming through (direct)", "es": "Paso", "example": "Paso, paso — Coming through", "note": null, "region": null },
+        { "en": "I'm sorry", "es": "Lo siento", "example": "Lo siento mucho — I'm very sorry", "note": null, "region": null },
+        { "en": "Sorry / Excuse me (informal)", "es": "Disculpa", "example": "Disculpa la demora — Sorry for the delay", "note": "Slightly more LatAm-leaning than 'perdona'", "region": null },
+        { "en": "Sorry / Excuse me (formal)", "es": "Disculpe", "example": "Disculpe, una pregunta — Excuse me, a question", "note": "The default polite form to address a stranger in Mexico/Central America", "region": null }
       ]
     },
     {
@@ -413,42 +159,16 @@
       "title": "Pardon & understanding",
       "progress": "not_started",
       "words": [
-        [
-          "What? / Pardon?",
-          "¿Cómo?"
-        ],
-        [
-          "Pardon? (more formal)",
-          "¿Perdón?"
-        ],
-        [
-          "I don't understand",
-          "No entiendo"
-        ],
-        [
-          "I didn't understand",
-          "No he entendido"
-        ],
-        [
-          "Can you repeat?",
-          "¿Puede repetir?"
-        ],
-        [
-          "Slower, please",
-          "Más despacio, por favor"
-        ],
-        [
-          "Do you speak English?",
-          "¿Habla inglés?"
-        ],
-        [
-          "What does that mean?",
-          "¿Qué significa eso?"
-        ],
-        [
-          "Speak more quietly/softly.",
-          "Habla más suave."
-        ]
+        { "en": "What? / Pardon?", "es": "¿Cómo?", "example": "¿Cómo? No te oí — What? I didn't hear you", "note": null, "region": null },
+        { "en": "Pardon? (more formal)", "es": "¿Perdón?", "example": "¿Perdón? ¿Puede repetir? — Pardon? Can you repeat?", "note": null, "region": null },
+        { "en": "I don't understand", "es": "No entiendo", "example": "No entiendo, ¿puedes hablar despacio? — I don't understand, can you speak slowly?", "note": null, "region": null },
+        { "en": "I didn't understand", "es": "No entendí", "example": "No entendí lo último — I didn't understand the last part", "note": "Standard preterite form across Latin America", "region": null },
+        { "en": "I haven't understood", "es": "No he entendido", "example": "No he entendido bien — I haven't quite understood", "note": "Present perfect — much more common in Spain than Latin America", "region": "ES" },
+        { "en": "Can you repeat? (formal)", "es": "¿Puede repetir?", "example": "¿Puede repetir, por favor? — Can you repeat, please?", "note": null, "region": null },
+        { "en": "Slower, please", "es": "Más despacio, por favor", "example": "Más despacio, por favor — Slower, please", "note": null, "region": null },
+        { "en": "Do you speak English? (formal)", "es": "¿Habla inglés?", "example": "¿Habla inglés? — Do you speak English?", "note": null, "region": null },
+        { "en": "What does that mean?", "es": "¿Qué significa eso?", "example": "¿Qué significa esa palabra? — What does that word mean?", "note": null, "region": null },
+        { "en": "Speak more quietly/softly.", "es": "Habla más suave.", "example": "Habla más suave, por favor — Please speak more softly", "note": null, "region": null }
       ]
     },
     {
@@ -456,34 +176,14 @@
       "title": "After a meal",
       "progress": "not_started",
       "words": [
-        [
-          "Everything was delicious.",
-          "Todo estaba delicioso."
-        ],
-        [
-          "The meal was very tasty.",
-          "La comida estuvo riquísima."
-        ],
-        [
-          "Excellent, thank you very much.",
-          "Excelente, muchas gracias."
-        ],
-        [
-          "My compliments to the chef.",
-          "Mis cumplidos al chef."
-        ],
-        [
-          "Very tasty!",
-          "¡Muy rico!"
-        ],
-        [
-          "I loved it.",
-          "Me encantó."
-        ],
-        [
-          "It was perfect.",
-          "Estaba de diez."
-        ]
+        { "en": "Everything was delicious.", "es": "Todo estaba delicioso.", "example": "Todo estaba delicioso, gracias — Everything was delicious, thank you", "note": null, "region": null },
+        { "en": "The meal was very tasty.", "es": "La comida estuvo riquísima.", "example": "La comida estuvo riquísima — The meal was super tasty", "note": null, "region": null },
+        { "en": "Excellent, thank you very much.", "es": "Excelente, muchas gracias.", "example": "Excelente, muchas gracias — Excellent, thank you very much", "note": null, "region": null },
+        { "en": "My compliments to the chef.", "es": "Mis cumplidos al chef.", "example": "Mis cumplidos al chef — My compliments to the chef", "note": null, "region": null },
+        { "en": "Very tasty!", "es": "¡Muy rico!", "example": "¡Muy rico todo! — Everything was very tasty!", "note": "'Rico' is the everyday word for tasty across Latin America", "region": null },
+        { "en": "Super tasty / awesome (food)", "es": "¡Quedó padrísimo!", "example": "Quedó padrísimo el mole — The mole turned out awesome", "note": "Very Mexican — 'padre/padrísimo' = great/awesome", "region": "MX" },
+        { "en": "I loved it.", "es": "Me encantó.", "example": "Me encantó la comida — I loved the food", "note": null, "region": null },
+        { "en": "It was perfect / top-notch.", "es": "Estaba de diez.", "example": "El postre estaba de diez — The dessert was top-notch", "note": "Very Spanish expression. Less common in Latin America.", "region": "ES" }
       ]
     },
     {
@@ -491,46 +191,19 @@
       "title": "Ordering food & eating out",
       "progress": "not_started",
       "words": [
-        [
-          "I'd like",
-          "me gustaría"
-        ],
-        [
-          "can I have",
-          "me pone"
-        ],
-        [
-          "for me",
-          "para mí"
-        ],
-        [
-          "the bill",
-          "la cuenta"
-        ],
-        [
-          "I'm hungry",
-          "tengo hambre"
-        ],
-        [
-          "I'm thirsty",
-          "tengo sed"
-        ],
-        [
-          "the menu",
-          "la carta"
-        ],
-        [
-          "a table for two",
-          "una mesa para dos"
-        ],
-        [
-          "to eat",
-          "comer"
-        ],
-        [
-          "to drink",
-          "beber"
-        ]
+        { "en": "I'd like", "es": "me gustaría", "example": "Me gustaría un café — I'd like a coffee", "note": null, "region": null },
+        { "en": "Can you give me / I'll have", "es": "me da", "example": "¿Me da un café, por favor? — Can I have a coffee, please?", "note": "The default way to order across Mexico and Central America", "region": null },
+        { "en": "Can I have (lit. 'put me')", "es": "me pone", "example": "Me pone un café, por favor — Can I have a coffee, please", "note": "Very Spanish — you'll mostly hear this in Spain", "region": "ES" },
+        { "en": "for me", "es": "para mí", "example": "Para mí, una cerveza — A beer for me", "note": null, "region": null },
+        { "en": "the bill / check", "es": "la cuenta", "example": "La cuenta, por favor — The check, please", "note": null, "region": null },
+        { "en": "I'm hungry", "es": "tengo hambre", "example": "Tengo mucha hambre — I'm very hungry", "note": null, "region": null },
+        { "en": "I'm thirsty", "es": "tengo sed", "example": "Tengo sed, ¿hay agua? — I'm thirsty, is there water?", "note": null, "region": null },
+        { "en": "the menu", "es": "el menú", "example": "¿Me trae el menú? — Can you bring the menu?", "note": "Most common term across Latin America", "region": null },
+        { "en": "the menu (alt)", "es": "la carta", "example": "La carta, por favor — The menu, please", "note": "Used in Spain and parts of LatAm; refers especially to the printed menu", "region": null },
+        { "en": "a table for two", "es": "una mesa para dos", "example": "Una mesa para dos, por favor — A table for two, please", "note": null, "region": null },
+        { "en": "to eat", "es": "comer", "example": "Vamos a comer — Let's go eat", "note": null, "region": null },
+        { "en": "to drink", "es": "tomar", "example": "¿Qué quieres tomar? — What do you want to drink?", "note": "'Tomar' is the default for 'to drink' across Latin America. 'Beber' is more formal/Spain.", "region": null },
+        { "en": "to drink (formal/Spain)", "es": "beber", "example": "Beber agua es importante — Drinking water is important", "note": "More formal in LatAm; everyday in Spain", "region": "ES" }
       ]
     },
     {
@@ -538,46 +211,16 @@
       "title": "Tastes & dietary needs",
       "progress": "not_started",
       "words": [
-        [
-          "delicious",
-          "rico"
-        ],
-        [
-          "good",
-          "bueno"
-        ],
-        [
-          "bad",
-          "malo"
-        ],
-        [
-          "too much",
-          "demasiado"
-        ],
-        [
-          "enough",
-          "suficiente"
-        ],
-        [
-          "spicy",
-          "picante"
-        ],
-        [
-          "sweet",
-          "dulce"
-        ],
-        [
-          "gluten-free",
-          "sin gluten"
-        ],
-        [
-          "dairy-free",
-          "sin lactosa"
-        ],
-        [
-          "I'm allergic (m/f)",
-          "soy alérgico/a"
-        ]
+        { "en": "delicious", "es": "rico", "example": "Está muy rico — It's really tasty", "note": null, "region": null },
+        { "en": "good", "es": "bueno", "example": "Muy bueno — Very good", "note": null, "region": null },
+        { "en": "bad", "es": "malo", "example": "Sabe malo — It tastes bad", "note": null, "region": null },
+        { "en": "too much", "es": "demasiado", "example": "Demasiado picante — Too spicy", "note": null, "region": null },
+        { "en": "enough", "es": "suficiente", "example": "Es suficiente, gracias — That's enough, thanks", "note": null, "region": null },
+        { "en": "spicy (hot)", "es": "picante", "example": "¿Es muy picante? — Is it very spicy?", "note": "Critical in Mexico — ranges from mild to brutal", "region": null },
+        { "en": "sweet", "es": "dulce", "example": "Demasiado dulce — Too sweet", "note": null, "region": null },
+        { "en": "gluten-free", "es": "sin gluten", "example": "¿Tiene opciones sin gluten? — Do you have gluten-free options?", "note": null, "region": null },
+        { "en": "dairy-free / lactose-free", "es": "sin lactosa", "example": "Soy intolerante a la lactosa — I'm lactose intolerant", "note": null, "region": null },
+        { "en": "I'm allergic (m/f)", "es": "soy alérgico / alérgica", "example": "Soy alérgico a los mariscos — I'm allergic to shellfish", "note": null, "region": null }
       ]
     },
     {
@@ -585,46 +228,16 @@
       "title": "Telling time & times of day",
       "progress": "not_started",
       "words": [
-        [
-          "What time is it?",
-          "¿Qué hora es?"
-        ],
-        [
-          "It's one o'clock",
-          "Es la una"
-        ],
-        [
-          "It's three o'clock",
-          "Son las tres"
-        ],
-        [
-          "at... o'clock",
-          "a las..."
-        ],
-        [
-          "half past",
-          "y media"
-        ],
-        [
-          "the morning",
-          "la mañana"
-        ],
-        [
-          "the afternoon",
-          "la tarde"
-        ],
-        [
-          "the night / evening",
-          "la noche"
-        ],
-        [
-          "noon / midday",
-          "el mediodía"
-        ],
-        [
-          "midnight",
-          "la medianoche"
-        ]
+        { "en": "What time is it?", "es": "¿Qué hora es?", "example": "¿Qué hora es? — What time is it?", "note": null, "region": null },
+        { "en": "It's one o'clock", "es": "Es la una", "example": "Es la una en punto — It's one o'clock sharp", "note": "Singular 'es' only for one o'clock", "region": null },
+        { "en": "It's three o'clock", "es": "Son las tres", "example": "Son las tres y media — It's three thirty", "note": "Plural 'son' for all other hours", "region": null },
+        { "en": "at... o'clock", "es": "a las...", "example": "A las ocho — At eight o'clock", "note": null, "region": null },
+        { "en": "half past", "es": "y media", "example": "Las ocho y media — Half past eight", "note": null, "region": null },
+        { "en": "the morning", "es": "la mañana", "example": "Por la mañana — In the morning", "note": null, "region": null },
+        { "en": "the afternoon", "es": "la tarde", "example": "Por la tarde — In the afternoon", "note": null, "region": null },
+        { "en": "the night / evening", "es": "la noche", "example": "Por la noche — At night", "note": null, "region": null },
+        { "en": "noon / midday", "es": "el mediodía", "example": "Al mediodía comemos — At noon we eat", "note": null, "region": null },
+        { "en": "midnight", "es": "la medianoche", "example": "A la medianoche — At midnight", "note": null, "region": null }
       ]
     },
     {
@@ -632,50 +245,19 @@
       "title": "Relative time & duration",
       "progress": "not_started",
       "words": [
-        [
-          "now",
-          "ahora"
-        ],
-        [
-          "later",
-          "luego"
-        ],
-        [
-          "before",
-          "antes"
-        ],
-        [
-          "after",
-          "después"
-        ],
-        [
-          "soon",
-          "pronto"
-        ],
-        [
-          "late",
-          "tarde"
-        ],
-        [
-          "early",
-          "temprano"
-        ],
-        [
-          "a moment",
-          "un momento"
-        ],
-        [
-          "a while",
-          "un rato"
-        ],
-        [
-          "right away",
-          "enseguida"
-        ],
-        [
-          "already / now",
-          "ya"
-        ]
+        { "en": "now", "es": "ahora", "example": "Ahora no puedo — I can't right now", "note": null, "region": null },
+        { "en": "right now", "es": "ahora mismo", "example": "Ahora mismo voy — I'm coming right now", "note": null, "region": null },
+        { "en": "right now (Mexico)", "es": "ahorita", "example": "Ahorita vengo — I'll be right back", "note": "Very common in Mexico/Central America. Note: can mean anywhere from 'right now' to 'eventually' — context matters!", "region": "MX,PA" },
+        { "en": "later", "es": "luego", "example": "Hasta luego — See you later", "note": null, "region": null },
+        { "en": "before", "es": "antes", "example": "Antes de comer — Before eating", "note": null, "region": null },
+        { "en": "after", "es": "después", "example": "Después de las tres — After three", "note": null, "region": null },
+        { "en": "soon", "es": "pronto", "example": "Llego pronto — I'll arrive soon", "note": null, "region": null },
+        { "en": "late", "es": "tarde", "example": "Llegué tarde — I arrived late", "note": null, "region": null },
+        { "en": "early", "es": "temprano", "example": "Muy temprano — Very early", "note": null, "region": null },
+        { "en": "a moment", "es": "un momento", "example": "Un momento, por favor — One moment, please", "note": null, "region": null },
+        { "en": "a while", "es": "un rato", "example": "Espera un rato — Wait a while", "note": null, "region": null },
+        { "en": "right away", "es": "enseguida", "example": "Voy enseguida — I'm coming right away", "note": null, "region": null },
+        { "en": "already / now / by now", "es": "ya", "example": "Ya llegué — I'm here now", "note": "Tiny word, huge range of meaning", "region": null }
       ]
     },
     {
@@ -683,46 +265,18 @@
       "title": "Shopping & money",
       "progress": "not_started",
       "words": [
-        [
-          "How much does it cost?",
-          "¿Cuánto cuesta?"
-        ],
-        [
-          "expensive",
-          "caro"
-        ],
-        [
-          "cheap",
-          "barato"
-        ],
-        [
-          "a little more",
-          "un poco más"
-        ],
-        [
-          "a little less",
-          "un poco menos"
-        ],
-        [
-          "I'll take it",
-          "me lo llevo"
-        ],
-        [
-          "Do you have change?",
-          "¿Tiene cambio?"
-        ],
-        [
-          "by card",
-          "con tarjeta"
-        ],
-        [
-          "in cash",
-          "en efectivo"
-        ],
-        [
-          "the receipt",
-          "el recibo"
-        ]
+        { "en": "How much does it cost?", "es": "¿Cuánto cuesta?", "example": "¿Cuánto cuesta esto? — How much does this cost?", "note": null, "region": null },
+        { "en": "How much is it? (informal)", "es": "¿Cuánto es?", "example": "¿Cuánto es todo? — How much is it all?", "note": "Common when paying at the counter", "region": null },
+        { "en": "expensive", "es": "caro", "example": "Es muy caro — It's very expensive", "note": null, "region": null },
+        { "en": "cheap", "es": "barato", "example": "Está barato — It's cheap", "note": null, "region": null },
+        { "en": "a little more", "es": "un poco más", "example": "Un poco más, por favor — A little more, please", "note": null, "region": null },
+        { "en": "a little less", "es": "un poco menos", "example": "Un poco menos — A little less", "note": null, "region": null },
+        { "en": "I'll take it", "es": "me lo llevo", "example": "Me lo llevo — I'll take it", "note": null, "region": null },
+        { "en": "Do you have change?", "es": "¿Tiene cambio?", "example": "¿Tiene cambio de cien? — Do you have change for a hundred?", "note": null, "region": null },
+        { "en": "by card", "es": "con tarjeta", "example": "¿Puedo pagar con tarjeta? — Can I pay by card?", "note": null, "region": null },
+        { "en": "in cash", "es": "en efectivo", "example": "Pago en efectivo — I'll pay in cash", "note": null, "region": null },
+        { "en": "the receipt", "es": "el recibo", "example": "¿Me da el recibo? — Can I have the receipt?", "note": null, "region": null },
+        { "en": "the receipt (Mexico)", "es": "la nota / el ticket", "example": "¿Me da la nota? — Can I have the receipt?", "note": "Common informal terms in Mexico/Central America", "region": "MX,PA" }
       ]
     },
     {
@@ -730,46 +284,21 @@
       "title": "Getting around",
       "progress": "not_started",
       "words": [
-        [
-          "the bus",
-          "el autobús"
-        ],
-        [
-          "the train",
-          "el tren"
-        ],
-        [
-          "the metro",
-          "el metro"
-        ],
-        [
-          "on foot",
-          "a pie"
-        ],
-        [
-          "by car",
-          "en coche"
-        ],
-        [
-          "Where is...?",
-          "¿Dónde está...?"
-        ],
-        [
-          "How do I get to...?",
-          "¿Cómo llego a...?"
-        ],
-        [
-          "near",
-          "cerca"
-        ],
-        [
-          "far",
-          "lejos"
-        ],
-        [
-          "to the right",
-          "a la derecha"
-        ]
+        { "en": "the bus", "es": "el autobús", "example": "Tomo el autobús — I take the bus", "note": "Universal but several regional alternatives below", "region": null },
+        { "en": "the bus (Mexico)", "es": "el camión", "example": "El camión a Oaxaca — The bus to Oaxaca", "note": "In Mexico 'el camión' often = bus (not truck!)", "region": "MX" },
+        { "en": "the bus (Caribbean / Panama)", "es": "la guagua", "example": "La guagua sale a las ocho — The bus leaves at eight", "note": "Used in Panama, Cuba, Dominican Republic, Puerto Rico", "region": "PA,CU,DO,PR" },
+        { "en": "the train", "es": "el tren", "example": "El tren llega tarde — The train is late", "note": null, "region": null },
+        { "en": "the metro / subway", "es": "el metro", "example": "Voy en metro — I'm going by metro", "note": null, "region": null },
+        { "en": "on foot", "es": "a pie", "example": "Voy a pie — I'm going on foot", "note": null, "region": null },
+        { "en": "by car", "es": "en carro", "example": "En carro tarda media hora — By car it takes half an hour", "note": "'Carro' is standard across Mexico, Central America, Colombia, Caribbean", "region": null },
+        { "en": "by car (Spain)", "es": "en coche", "example": "Vamos en coche — Let's go by car", "note": "'Coche' is the Spanish term — sounds odd in much of LatAm", "region": "ES" },
+        { "en": "by car (Southern Cone)", "es": "en auto", "example": "En auto es más rápido — By car is faster", "note": "'Auto' is preferred in Argentina, Uruguay, Chile", "region": "AR,UY,CL" },
+        { "en": "Where is...?", "es": "¿Dónde está...?", "example": "¿Dónde está el baño? — Where's the bathroom?", "note": null, "region": null },
+        { "en": "How do I get to...?", "es": "¿Cómo llego a...?", "example": "¿Cómo llego al centro? — How do I get to downtown?", "note": null, "region": null },
+        { "en": "near", "es": "cerca", "example": "Está cerca — It's near", "note": null, "region": null },
+        { "en": "far", "es": "lejos", "example": "Está muy lejos — It's very far", "note": null, "region": null },
+        { "en": "to the right", "es": "a la derecha", "example": "Gira a la derecha — Turn right", "note": null, "region": null },
+        { "en": "block (city block)", "es": "la cuadra", "example": "Dos cuadras más — Two more blocks", "note": "'Cuadra' is the Latin American word for a city block. In Spain: 'manzana'", "region": null }
       ]
     },
     {
@@ -777,54 +306,21 @@
       "title": "Agreement & disagreement",
       "progress": "not_started",
       "words": [
-        [
-          "yes",
-          "sí"
-        ],
-        [
-          "of course",
-          "claro"
-        ],
-        [
-          "OK / sure",
-          "vale"
-        ],
-        [
-          "of course (emphatic)",
-          "por supuesto"
-        ],
-        [
-          "exactly",
-          "exacto"
-        ],
-        [
-          "no",
-          "no"
-        ],
-        [
-          "not at all",
-          "para nada"
-        ],
-        [
-          "absolutely not",
-          "en absoluto"
-        ],
-        [
-          "neither / not either",
-          "tampoco"
-        ],
-        [
-          "I don't know",
-          "no sé"
-        ],
-        [
-          "maybe",
-          "quizás"
-        ],
-        [
-          "it depends",
-          "depende"
-        ]
+        { "en": "yes", "es": "sí", "example": "Sí, claro — Yes, of course", "note": null, "region": null },
+        { "en": "of course", "es": "claro", "example": "Claro que sí — Of course", "note": "Universal across Spanish-speaking world", "region": null },
+        { "en": "OK / sure", "es": "vale", "example": "Vale, hasta luego — Ok, see you later", "note": "The go-to 'ok' in Spain — uncommon in Latin America", "region": "ES" },
+        { "en": "OK / deal (Mexico)", "es": "sale", "example": "Sale, ahí estaré — Ok, I'll be there", "note": "The default 'ok' in Mexico", "region": "MX" },
+        { "en": "OK / go for it", "es": "dale", "example": "Dale, nos vemos — Ok, see you", "note": "Argentina/Uruguay; also heard in Panama and parts of Central America", "region": "AR,UY,PA" },
+        { "en": "of course (emphatic)", "es": "por supuesto", "example": "Por supuesto que voy — Of course I'm going", "note": null, "region": null },
+        { "en": "exactly", "es": "exacto", "example": "Exacto, eso es — Exactly, that's it", "note": null, "region": null },
+        { "en": "no", "es": "no", "example": "No, gracias — No, thanks", "note": null, "region": null },
+        { "en": "not at all", "es": "para nada", "example": "Para nada, no me molesta — Not at all, it doesn't bother me", "note": null, "region": null },
+        { "en": "absolutely not", "es": "en absoluto", "example": "En absoluto — Absolutely not", "note": null, "region": null },
+        { "en": "neither / not either", "es": "tampoco", "example": "Yo tampoco — Me neither", "note": null, "region": null },
+        { "en": "I don't know", "es": "no sé", "example": "No sé, depende — I don't know, it depends", "note": null, "region": null },
+        { "en": "maybe", "es": "quizás", "example": "Quizás mañana — Maybe tomorrow", "note": null, "region": null },
+        { "en": "maybe (alt)", "es": "tal vez", "example": "Tal vez sí — Maybe yes", "note": "Slightly more common in Latin America than 'quizás'", "region": null },
+        { "en": "it depends", "es": "depende", "example": "Depende del día — It depends on the day", "note": null, "region": null }
       ]
     },
     {
@@ -832,46 +328,17 @@
       "title": "Feelings & states",
       "progress": "not_started",
       "words": [
-        [
-          "I'm cold",
-          "tengo frío"
-        ],
-        [
-          "I'm hot",
-          "tengo calor"
-        ],
-        [
-          "I'm tired (m/f)",
-          "estoy cansado/a"
-        ],
-        [
-          "it hurts",
-          "me duele"
-        ],
-        [
-          "I'm fine / well",
-          "estoy bien"
-        ],
-        [
-          "I'm not well",
-          "estoy mal"
-        ],
-        [
-          "happy (m/f)",
-          "contento/a"
-        ],
-        [
-          "worried (m/f)",
-          "preocupado/a"
-        ],
-        [
-          "scared",
-          "tengo miedo"
-        ],
-        [
-          "angry (m/f)",
-          "enfadado/a"
-        ]
+        { "en": "I'm cold", "es": "tengo frío", "example": "Tengo mucho frío — I'm very cold", "note": "Spanish uses 'have' for temperature feelings, not 'be'", "region": null },
+        { "en": "I'm hot", "es": "tengo calor", "example": "Tengo calor — I'm hot", "note": null, "region": null },
+        { "en": "I'm tired (m/f)", "es": "estoy cansado / cansada", "example": "Estoy muy cansado — I'm very tired", "note": null, "region": null },
+        { "en": "it hurts", "es": "me duele", "example": "Me duele la cabeza — My head hurts", "note": null, "region": null },
+        { "en": "I'm fine / well", "es": "estoy bien", "example": "Estoy bien, gracias — I'm fine, thanks", "note": null, "region": null },
+        { "en": "I'm not well", "es": "estoy mal", "example": "Estoy mal del estómago — My stomach is upset", "note": null, "region": null },
+        { "en": "happy (m/f)", "es": "contento / contenta", "example": "Estoy muy contento — I'm very happy", "note": null, "region": null },
+        { "en": "worried (m/f)", "es": "preocupado / preocupada", "example": "Estoy preocupada — I'm worried", "note": null, "region": null },
+        { "en": "I'm scared", "es": "tengo miedo", "example": "Tengo miedo de los perros — I'm afraid of dogs", "note": null, "region": null },
+        { "en": "angry / mad (m/f)", "es": "enojado / enojada", "example": "Está enojado conmigo — He's angry with me", "note": "The standard form across Latin America", "region": null },
+        { "en": "angry (Spain)", "es": "enfadado / enfadada", "example": "Está enfadado — He's upset", "note": "Spanish form — 'enojado' is what you'll hear in Mexico/Central America", "region": "ES" }
       ]
     },
     {
@@ -879,46 +346,18 @@
       "title": "Greetings & farewells",
       "progress": "not_started",
       "words": [
-        [
-          "hello",
-          "hola"
-        ],
-        [
-          "good morning",
-          "buenos días"
-        ],
-        [
-          "good afternoon",
-          "buenas tardes"
-        ],
-        [
-          "good evening / night",
-          "buenas noches"
-        ],
-        [
-          "how are you?",
-          "¿qué tal?"
-        ],
-        [
-          "goodbye",
-          "adiós"
-        ],
-        [
-          "see you later",
-          "hasta luego"
-        ],
-        [
-          "see you tomorrow",
-          "hasta mañana"
-        ],
-        [
-          "see you",
-          "nos vemos"
-        ],
-        [
-          "take care",
-          "cuídate"
-        ]
+        { "en": "hello", "es": "hola", "example": "Hola, ¿cómo estás? — Hi, how are you?", "note": null, "region": null },
+        { "en": "good morning", "es": "buenos días", "example": "Buenos días, señora — Good morning, ma'am", "note": null, "region": null },
+        { "en": "good afternoon", "es": "buenas tardes", "example": "Buenas tardes — Good afternoon", "note": null, "region": null },
+        { "en": "good evening / night", "es": "buenas noches", "example": "Buenas noches, hasta mañana — Good night, see you tomorrow", "note": null, "region": null },
+        { "en": "how are you? (informal)", "es": "¿cómo estás?", "example": "¿Cómo estás hoy? — How are you today?", "note": "The default greeting question in Latin America", "region": null },
+        { "en": "how's it going?", "es": "¿qué tal?", "example": "¿Qué tal? — How's it going?", "note": "Common in Spain; understood everywhere but less used in Mexico", "region": null },
+        { "en": "what's up? (Mexico)", "es": "¿qué onda?", "example": "¿Qué onda, amigo? — What's up, friend?", "note": "Very Mexican / Central American casual greeting", "region": "MX" },
+        { "en": "goodbye", "es": "adiós", "example": "Adiós, cuídate — Goodbye, take care", "note": null, "region": null },
+        { "en": "see you later", "es": "hasta luego", "example": "Hasta luego — See you later", "note": null, "region": null },
+        { "en": "see you tomorrow", "es": "hasta mañana", "example": "Hasta mañana — See you tomorrow", "note": null, "region": null },
+        { "en": "see you", "es": "nos vemos", "example": "Nos vemos pronto — See you soon", "note": null, "region": null },
+        { "en": "take care", "es": "cuídate", "example": "Cuídate mucho — Take good care", "note": null, "region": null }
       ]
     },
     {
@@ -926,46 +365,17 @@
       "title": "Quantities & comparisons",
       "progress": "not_started",
       "words": [
-        [
-          "big",
-          "grande"
-        ],
-        [
-          "small",
-          "pequeño"
-        ],
-        [
-          "a lot",
-          "mucho"
-        ],
-        [
-          "a little",
-          "poco"
-        ],
-        [
-          "quite / enough",
-          "bastante"
-        ],
-        [
-          "more",
-          "más"
-        ],
-        [
-          "less",
-          "menos"
-        ],
-        [
-          "the same",
-          "igual"
-        ],
-        [
-          "better",
-          "mejor"
-        ],
-        [
-          "worse",
-          "peor"
-        ]
+        { "en": "big", "es": "grande", "example": "Una casa grande — A big house", "note": null, "region": null },
+        { "en": "small", "es": "pequeño / pequeña", "example": "Un perro pequeño — A small dog", "note": null, "region": null },
+        { "en": "small (LatAm casual)", "es": "chico / chica", "example": "Un café chico — A small coffee", "note": "More common than 'pequeño' in everyday LatAm speech", "region": null },
+        { "en": "a lot", "es": "mucho", "example": "Mucho gusto — Pleasure (lit. much pleasure)", "note": null, "region": null },
+        { "en": "a little", "es": "poco", "example": "Un poco de azúcar — A little sugar", "note": null, "region": null },
+        { "en": "quite / enough", "es": "bastante", "example": "Bastante bien — Quite well", "note": null, "region": null },
+        { "en": "more", "es": "más", "example": "Un poco más — A bit more", "note": null, "region": null },
+        { "en": "less", "es": "menos", "example": "Menos sal — Less salt", "note": null, "region": null },
+        { "en": "the same", "es": "igual", "example": "Es igual — It's the same", "note": null, "region": null },
+        { "en": "better", "es": "mejor", "example": "Mejor mañana — Better tomorrow", "note": null, "region": null },
+        { "en": "worse", "es": "peor", "example": "Peor que ayer — Worse than yesterday", "note": null, "region": null }
       ]
     },
     {
@@ -973,46 +383,21 @@
       "title": "People & relationships",
       "progress": "not_started",
       "words": [
-        [
-          "my partner",
-          "mi pareja"
-        ],
-        [
-          "my son / daughter",
-          "mi hijo/a"
-        ],
-        [
-          "my mother",
-          "mi madre"
-        ],
-        [
-          "my father",
-          "mi padre"
-        ],
-        [
-          "he",
-          "él"
-        ],
-        [
-          "she",
-          "ella"
-        ],
-        [
-          "they",
-          "ellos"
-        ],
-        [
-          "my friend (m/f)",
-          "mi amigo/a"
-        ],
-        [
-          "sir / Mr.",
-          "el señor"
-        ],
-        [
-          "ma'am / Mrs.",
-          "la señora"
-        ]
+        { "en": "my partner", "es": "mi pareja", "example": "Mi pareja y yo — My partner and I", "note": null, "region": null },
+        { "en": "my son / daughter", "es": "mi hijo / hija", "example": "Mi hija tiene cinco años — My daughter is five", "note": null, "region": null },
+        { "en": "my mother", "es": "mi madre", "example": "Mi madre vive aquí — My mother lives here", "note": null, "region": null },
+        { "en": "mom (casual)", "es": "mi mamá", "example": "Mi mamá cocina rico — My mom cooks great", "note": "Far more common in everyday Latin American speech than 'madre'", "region": null },
+        { "en": "my father", "es": "mi padre", "example": "Mi padre trabaja mucho — My father works a lot", "note": null, "region": null },
+        { "en": "dad (casual)", "es": "mi papá", "example": "Mi papá es de Panamá — My dad is from Panama", "note": "Far more common in everyday Latin American speech than 'padre'", "region": null },
+        { "en": "he", "es": "él", "example": "Él es mi amigo — He's my friend", "note": null, "region": null },
+        { "en": "she", "es": "ella", "example": "Ella es de México — She's from Mexico", "note": null, "region": null },
+        { "en": "they (m/mixed)", "es": "ellos", "example": "Ellos llegan tarde — They're arriving late", "note": null, "region": null },
+        { "en": "they (f)", "es": "ellas", "example": "Ellas son hermanas — They are sisters", "note": null, "region": null },
+        { "en": "you all (LatAm)", "es": "ustedes", "example": "¿Ustedes hablan inglés? — Do you all speak English?", "note": "'Ustedes' is universal 'you all' in Latin America (formal & informal)", "region": null },
+        { "en": "you all (Spain, informal)", "es": "vosotros", "example": "¿Vosotros venís? — Are you all coming?", "note": "Spain only — Latin America uses 'ustedes' for all 'you all'", "region": "ES" },
+        { "en": "my friend (m/f)", "es": "mi amigo / amiga", "example": "Mi amiga es de Panamá — My friend is from Panama", "note": null, "region": null },
+        { "en": "sir / Mr.", "es": "el señor", "example": "El señor González — Mr. González", "note": null, "region": null },
+        { "en": "ma'am / Mrs.", "es": "la señora", "example": "La señora López — Mrs. López", "note": null, "region": null }
       ]
     },
     {
@@ -1020,46 +405,100 @@
       "title": "Useful everyday verbs",
       "progress": "not_started",
       "words": [
-        [
-          "I want",
-          "quiero"
-        ],
-        [
-          "I need",
-          "necesito"
-        ],
-        [
-          "I have",
-          "tengo"
-        ],
-        [
-          "I'm looking for",
-          "busco"
-        ],
-        [
-          "I can",
-          "puedo"
-        ],
-        [
-          "I know (a fact)",
-          "sé"
-        ],
-        [
-          "I know (a person/place)",
-          "conozco"
-        ],
-        [
-          "I like",
-          "me gusta"
-        ],
-        [
-          "I prefer",
-          "prefiero"
-        ],
-        [
-          "I love (it)",
-          "me encanta"
-        ]
+        { "en": "I want", "es": "quiero", "example": "Quiero un café — I want a coffee", "note": null, "region": null },
+        { "en": "I need", "es": "necesito", "example": "Necesito ayuda — I need help", "note": null, "region": null },
+        { "en": "I have", "es": "tengo", "example": "Tengo dos hermanos — I have two siblings", "note": null, "region": null },
+        { "en": "I'm looking for", "es": "busco", "example": "Busco un hotel — I'm looking for a hotel", "note": null, "region": null },
+        { "en": "I can", "es": "puedo", "example": "¿Puedo pasar? — Can I come in?", "note": null, "region": null },
+        { "en": "I know (a fact)", "es": "sé", "example": "Sé que es tarde — I know it's late", "note": null, "region": null },
+        { "en": "I know (a person/place)", "es": "conozco", "example": "Conozco esta ciudad — I know this city", "note": "Two different verbs for 'to know' — saber (facts) vs. conocer (people/places)", "region": null },
+        { "en": "I like", "es": "me gusta", "example": "Me gusta el café — I like coffee", "note": null, "region": null },
+        { "en": "I prefer", "es": "prefiero", "example": "Prefiero el té — I prefer tea", "note": null, "region": null },
+        { "en": "I love (it)", "es": "me encanta", "example": "Me encanta este lugar — I love this place", "note": null, "region": null }
+      ]
+    },
+    {
+      "id": "L23",
+      "title": "Basic Replies",
+      "progress": "not_started",
+      "words": [
+        { "en": "fine / good", "es": "bien", "example": "Todo bien — Everything's fine", "note": null, "region": null },
+        { "en": "perfect", "es": "perfecto", "example": "Perfecto, nos vemos allí — Perfect, see you there", "note": null, "region": null },
+        { "en": "agreed / okay", "es": "de acuerdo", "example": "De acuerdo, lo hago yo — Agreed, I'll do it", "note": null, "region": null },
+        { "en": "sure / of course", "es": "claro", "example": "Claro que sí — Of course", "note": "Very common in Spain and Latin America", "region": null },
+        { "en": "ok", "es": "ok", "example": "Ok, entendido — Ok, got it", "note": null, "region": null },
+        { "en": "ok / alright", "es": "vale", "example": "Vale, hasta luego — Ok, see you later", "note": "The go-to 'ok' in Spain, less common in Latin America", "region": "ES" },
+        { "en": "alright / let's go / come on", "es": "venga", "example": "Venga, vamos — Alright, let's go", "note": "Very Spanish — used constantly for agreement, encouragement, goodbye", "region": "ES" }
+      ]
+    },
+    {
+      "id": "L24",
+      "title": "Got It / I Understand",
+      "progress": "not_started",
+      "words": [
+        { "en": "got it / understood", "es": "entendido", "example": "Entendido, lo hago ahora — Got it, I'll do it now", "note": null, "region": null },
+        { "en": "understood", "es": "comprendido", "example": "Comprendido, sin problema — Understood, no problem", "note": null, "region": null },
+        { "en": "I got it now", "es": "ya entendí", "example": "Ya entendí, gracias — I got it now, thanks", "note": "'Ya' adds a sense of 'just now / finally'", "region": null },
+        { "en": "that's clear / got it", "es": "quedó claro", "example": "Quedó claro, no hay duda — It's clear, no doubt", "note": null, "region": null },
+        { "en": "got it / I have it", "es": "lo tengo", "example": "Lo tengo, no te preocupes — Got it, don't worry", "note": null, "region": null },
+        { "en": "got it / ready / done", "es": "listo", "example": "Listo, para eso estamos — Got it, that's what we're here for", "note": "Widely used across Latin America", "region": null }
+      ]
+    },
+    {
+      "id": "L25",
+      "title": "Agreeing to a Plan",
+      "progress": "not_started",
+      "words": [
+        { "en": "sounds good to me", "es": "me parece bien", "example": "Me parece bien, quedamos así — Sounds good, let's leave it like that", "note": null, "region": null },
+        { "en": "sounds good", "es": "suena bien", "example": "Suena bien, nos vemos el lunes — Sounds good, see you Monday", "note": null, "region": null },
+        { "en": "done / it's a deal", "es": "hecho", "example": "Hecho, allí estaré — Done, I'll be there", "note": null, "region": null },
+        { "en": "let's leave it like that", "es": "quedamos así", "example": "Quedamos así entonces — Let's leave it like that then", "note": "Very useful for confirming plans", "region": null },
+        { "en": "ok / I'm in", "es": "va", "example": "Va, cuenten conmigo — Ok, count me in", "note": null, "region": null },
+        { "en": "ok / go for it", "es": "dale", "example": "Dale, nos vemos — Ok, see you", "note": "Common in Argentina/Uruguay, also heard in Panama and Central America", "region": "AR,UY,PA" },
+        { "en": "ok / deal", "es": "sale", "example": "Sale, ahí estaré — Ok, I'll be there", "note": "The go-to 'ok' in Mexico", "region": "MX" }
+      ]
+    },
+    {
+      "id": "L26",
+      "title": "Acknowledging Instructions",
+      "progress": "not_started",
+      "words": [
+        { "en": "noted", "es": "anotado", "example": "Anotado, lo hago hoy — Noted, I'll do it today", "note": null, "region": null },
+        { "en": "I'll make a note / noted", "es": "tomo nota", "example": "Tomo nota, gracias — Noted, thanks", "note": null, "region": null },
+        { "en": "noted / written down", "es": "apuntado", "example": "Apuntado, no se me olvida — Noted, I won't forget", "note": null, "region": null },
+        { "en": "I'll keep it in mind", "es": "lo tengo presente", "example": "Lo tengo presente, no te preocupes — I'll keep it in mind, don't worry", "note": null, "region": null },
+        { "en": "I'll take care of it", "es": "me encargo", "example": "Me encargo yo — I'll take care of it", "note": null, "region": null },
+        { "en": "I'll handle it", "es": "me ocupo", "example": "Me ocupo ahora mismo — I'll handle it right now", "note": null, "region": null },
+        { "en": "I'm on it", "es": "en eso estoy", "example": "En eso estoy — I'm on it", "note": null, "region": null },
+        { "en": "right away / right now", "es": "ahora mismo", "example": "Ahora mismo lo hago — I'll do it right away", "note": null, "region": null }
+      ]
+    },
+    {
+      "id": "L27",
+      "title": "Neutral Acceptance",
+      "progress": "not_started",
+      "words": [
+        { "en": "okay / that's fine", "es": "está bien", "example": "Está bien, como quieras — Okay, as you wish", "note": null, "region": null },
+        { "en": "as you prefer", "es": "como prefieras", "example": "Como prefieras, yo me adapto — As you prefer, I'll adapt", "note": null, "region": null },
+        { "en": "as you see fit", "es": "como veas", "example": "Como veas tú — As you see fit", "note": null, "region": null },
+        { "en": "works for me", "es": "me sirve", "example": "Me sirve, sin problema — Works for me, no problem", "note": null, "region": null },
+        { "en": "could be / maybe / ok-ish", "es": "puede ser", "example": "Puede ser, no sé — Could be, I don't know", "note": "Softer than sí — implies mild agreement or uncertainty", "region": null },
+        { "en": "fine by me", "es": "por mí, bien", "example": "Por mí, bien, tú decides — Fine by me, you decide", "note": null, "region": null }
+      ]
+    },
+    {
+      "id": "L28",
+      "title": "Regional Quick-Grabs",
+      "progress": "not_started",
+      "words": [
+        { "en": "ok / cool / let's go", "es": "órale", "example": "Órale, vamos — Ok, let's go", "note": "Very colloquial Mexican expression — enthusiasm or agreement", "region": "MX" },
+        { "en": "I'm in", "es": "jalo", "example": "Yo jalo — I'm in", "note": "Informal Mexican slang for joining in or agreeing", "region": "MX" },
+        { "en": "it's set / done / sorted", "es": "ya quedó", "example": "Ya quedó, no te preocupes — It's sorted, don't worry", "note": "Very common in Mexico for confirming something is done", "region": "MX" },
+        { "en": "right away / sure / let's do it", "es": "de una", "example": "De una, vamos — Sure, let's go", "note": "Common in Colombia and Argentina", "region": "CO,AR" },
+        { "en": "ok / go for it", "es": "dale", "example": "Dale, nos vemos — Ok, see you", "note": "Argentina/Uruguay. Also heard in Panama and parts of Central America", "region": "AR,UY,PA" },
+        { "en": "ready / done / got it", "es": "listo", "example": "Listo, para eso estamos — Done, that's what we're here for", "note": "Broadly understood across all of Latin America", "region": null },
+        { "en": "ok / deal", "es": "sale", "example": "Sale, ahí estaré — Ok, I'll be there", "note": "The default 'ok' in Mexico", "region": "MX" },
+        { "en": "ok / alright", "es": "vale", "example": "Vale, hasta luego — Ok, see you", "note": "Spain. You'll still hear it occasionally in Latin America from Spaniards", "region": "ES" }
       ]
     }
   ]
