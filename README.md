@@ -10,6 +10,7 @@ A local web app for practising Spanish vocabulary with flashcard-style reveal an
 - Add new lessons and words from within the app
 - Delete words or entire lessons
 - Data persisted in SQLite — survives restarts
+- Offline study support — browse lessons and reveal translations without connectivity (see [Offline Support](#offline-support))
 
 ## Quick Start (Local)
 
@@ -52,6 +53,7 @@ On first run, `lessons.json` is imported as seed data. Subsequent starts skip se
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/` | Serves the frontend |
+| `GET` | `/sw.js` | Service worker (offline support), served at root scope |
 | `GET` | `/api/health` | Health check |
 | `GET` | `/api/lessons` | List all lessons with words |
 | `POST` | `/api/lessons` | Create a lesson |
@@ -79,4 +81,51 @@ requirements.txt    # Python dependencies
 Dockerfile          # Container image
 docker-compose.yml  # Container orchestration
 static/index.html   # Frontend SPA
+static/login.html   # Login page
+static/sw.js        # Service worker (offline caching)
 ```
+
+## Offline Support
+
+The app stays usable for **studying** without an internet connection — handy
+when you're away from connectivity (e.g. off-grid while cruising). A
+[service worker](static/sw.js) (`static/sw.js`) caches the app shell, lesson
+data, and fonts so the app loads and renders from cache when the network is
+unreachable.
+
+**What works offline (read-only):**
+
+- Opening the app and browsing every lesson
+- Revealing translations
+- Audio pronunciation — *if* the device has an on-device Spanish voice
+  installed (browsers that fetch voices from the cloud go silent offline)
+
+**What requires connectivity:**
+
+- Changing progress, and adding/deleting words or lessons. These are **not**
+  queued — the UI shows an offline banner and refuses the change with a toast,
+  so nothing is silently lost.
+- The **first** visit on any device/browser must be online, to install the
+  service worker and populate the cache.
+
+### How it works
+
+| Request | Strategy |
+|---------|----------|
+| App shell (navigation to `/`) | Network-first, fall back to cached `/` |
+| `GET /api/lessons` | Network-first (fresh online), cached copy offline |
+| Google Fonts | Cache-first (immutable) |
+| Writes (`POST`/`PUT`/`DELETE`) | Pass through; synthetic `503 {"offline": true}` when unreachable |
+
+The cache is versioned (`vocab-v1` in `static/sw.js`). Bump the version to
+force old caches to be cleared on the next activation after changing cached
+assets. The worker is served from the root path (`/sw.js`, not `/static/`) with
+`Cache-Control: no-cache` so its scope can control `/` and updates are picked
+up promptly.
+
+> **Requires HTTPS.** Service workers only register over HTTPS (or `localhost`
+> for development). The production deployment is already served over HTTPS.
+
+> **Note:** Offline is read-only by design. An installable PWA (home-screen
+> icon, fullscreen) is a possible future enhancement — the service worker here
+> is the prerequisite.
