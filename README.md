@@ -128,4 +128,38 @@ up promptly.
 
 > **Note:** Offline is read-only by design. An installable PWA (home-screen
 > icon, fullscreen) is a possible future enhancement — the service worker here
-> is the prerequisite.
+> is the prerequisite. See [Future Enhancements](#future-enhancements).
+
+## Future Enhancements
+
+Planned/considered improvements, not yet implemented:
+
+### Installable PWA (home-screen app)
+
+Make the app installable to the phone home screen so it opens fullscreen like a
+native app, with its own icon. The offline service worker (already shipped) is
+the prerequisite. Remaining work:
+
+- Add a `manifest.json` (name, icons, `start_url`, `display: standalone`,
+  theme/background colors) and link it from `static/index.html`.
+- Add app icon assets (e.g. 192px and 512px PNGs).
+- Optionally serve the manifest at root scope and handle the
+  "Add to Home Screen" prompt.
+
+Read-only offline behavior stays the same; this is purely about installability.
+
+### Write-handler hardening (offline save reconciliation)
+
+The current write guard trusts `navigator.onLine`. On a real phone that's
+reliable, but if it ever reports "online" while the network is actually dead
+(captive portals, flaky connectivity handoff), an optimistic UI change could
+appear to succeed without persisting. Hardening:
+
+- In the write handlers (`cycleProgress`, `addLesson`, `addWord`, `deleteWord`,
+  `deleteLesson` in `static/index.html`), inspect the server response and treat
+  the service worker's synthetic `503 {"offline": true}` (or a thrown fetch) as
+  a failure.
+- Roll back the optimistic UI change and surface the offline toast, so the UI
+  never reflects a save that didn't land.
+
+This is defense-in-depth; the current behavior is correct for normal use.
