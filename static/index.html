@@ -428,6 +428,29 @@
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
+  /* ── Offline banner ── */
+  .offline-banner {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: var(--amber-light);
+    color: var(--amber);
+    box-shadow: inset 0 -1px 0 var(--amber-mid);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 7px 12px;
+    text-align: center;
+  }
+  .offline-banner.show { display: flex; }
+  .offline-banner .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--amber);
+  }
+
   /* ── Progress legend (below stats) ── */
   .legend {
     display: flex;
@@ -459,6 +482,9 @@
 </style>
 </head>
 <body>
+<div class="offline-banner" id="offline-banner">
+  <span class="dot"></span> Offline &mdash; studying from saved data, changes won&rsquo;t save
+</div>
 <div class="container">
   <header>
     <h1>Vocabulario <span>Espa&ntilde;ol</span></h1>
@@ -646,6 +672,7 @@ function toggleWord(enEl) {
 }
 
 async function cycleProgress(lessonId) {
+  if (blockedOffline()) return;
   const lesson = lessons.find(l => l.id === lessonId);
   const currentIdx = PROGRESS_CYCLE.indexOf(lesson.progress);
   const nextProgress = PROGRESS_CYCLE[(currentIdx + 1) % PROGRESS_CYCLE.length];
@@ -670,6 +697,7 @@ async function addLesson() {
   const input = document.getElementById('new-lesson-input');
   const title = input.value.trim();
   if (!title) return;
+  if (blockedOffline()) return;
   const res = await fetch('/api/lessons', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -688,6 +716,7 @@ async function addWord(lessonId) {
   const en = enInput.value.trim();
   const es = esInput.value.trim();
   if (!en || !es) return;
+  if (blockedOffline()) return;
   await fetch(`/api/lessons/${lessonId}/words`, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -706,6 +735,7 @@ async function addWord(lessonId) {
 }
 
 async function deleteWord(lessonId, index) {
+  if (blockedOffline()) return;
   if (!confirm('Delete this word?')) return;
   await fetch(`/api/lessons/${lessonId}/words/${index}`, { method: 'DELETE' });
   const lesson = lessons.find(l => l.id === lessonId);
@@ -719,12 +749,37 @@ async function deleteWord(lessonId, index) {
 }
 
 async function deleteLesson(lessonId) {
+  if (blockedOffline()) return;
   const lesson = lessons.find(l => l.id === lessonId);
   if (!confirm(`Delete lesson "${lesson.title}" and all its words?`)) return;
   await fetch(`/api/lessons/${lessonId}`, { method: 'DELETE' });
   lessons = lessons.filter(l => l.id !== lessonId);
   render();
   showToast('Lesson deleted');
+}
+
+function isOffline() {
+  return navigator.onLine === false;
+}
+
+// Returns true and shows a toast if we're offline — callers bail before mutating.
+function blockedOffline() {
+  if (isOffline()) {
+    showToast('Offline — changes will save when you’re back online');
+    return true;
+  }
+  return false;
+}
+
+function updateOfflineBanner() {
+  document.getElementById('offline-banner').classList.toggle('show', isOffline());
+}
+window.addEventListener('online', updateOfflineBanner);
+window.addEventListener('offline', updateOfflineBanner);
+updateOfflineBanner();
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
 }
 
 fetchLessons();

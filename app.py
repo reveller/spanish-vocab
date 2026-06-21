@@ -46,6 +46,15 @@ def index():
         return send_from_directory('static', 'login.html')
     return send_from_directory('static', 'index.html')
 
+@app.route('/sw.js')
+def service_worker():
+    # Served from root so the worker's scope can control '/'. No auth — the
+    # file must be fetchable to register. no-cache so SW updates are picked up.
+    resp = send_from_directory('static', 'sw.js')
+    resp.headers['Cache-Control'] = 'no-cache'
+    resp.headers['Content-Type'] = 'application/javascript'
+    return resp
+
 @app.route('/api/health')
 def health():
     return jsonify({'status': 'ok'})
