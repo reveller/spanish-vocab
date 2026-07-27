@@ -11,7 +11,7 @@ bin/sync-nginx.sh           # install, validate, reload, smoke-test
 ```
 
 - Vhost: `n2deep-infra/nginx/vocab.n2deep.co`
-- One-time setup (DNS, TLS): `n2deep-infra/nginx/SITES.md`
+- One-time setup (DNS, TLS): `n2deep-infra/SITES.md`
 - Box operations (TLS renewal, snapshots, logs, danger list): `n2deep-infra/RUNBOOK.md`
 
 **Why it moved:** `nginx -t` is global and `default_server` follows `sites-enabled/` load
