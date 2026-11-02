@@ -140,6 +140,36 @@
   .add-lesson-bar input:focus { border-color: var(--terracotta); }
   .add-lesson-bar input::placeholder { color: var(--text3); }
 
+  /* ── Search ── */
+  .search-bar { margin: -1rem 0 2rem; }
+  .search-bar input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 16px; /* >=16px prevents iOS zoom-on-focus */
+    font-weight: 300;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-bar input:focus { border-color: var(--terracotta); }
+  .search-bar input::placeholder { color: var(--text3); }
+  .search-empty {
+    text-align: center;
+    color: var(--text3);
+    font-size: 14px;
+    padding: 2rem 0;
+  }
+  .lesson.search-hidden { display: none; }
+  .word-row.search-hit {
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 1px var(--terracotta);
+  }
+
   /* ── Buttons ── */
   button {
     font-family: var(--font-body);
@@ -509,6 +539,11 @@
     <button class="primary" onclick="addLesson()">Add lesson</button>
   </div>
 
+  <div class="search-bar">
+    <input type="search" id="search-input" placeholder="Search English or Espa&ntilde;ol..." autocomplete="off" aria-label="Search words" />
+  </div>
+  <div id="search-empty" class="search-empty" hidden></div>
+
   <div id="lessons-container"></div>
 </div>
 
@@ -595,6 +630,8 @@ function render() {
     el.style.animationDelay = `${i * 30}ms`;
     container.appendChild(el);
   });
+  // render() rebuilds every row, discarding search classes; re-apply them.
+  if (norm(document.getElementById('search-input').value).length >= 2) applySearch();
 }
 
 function buildLesson(lesson) {
@@ -670,6 +707,105 @@ function toggleWord(enEl) {
   esEl.classList.toggle('open', !isOpen);
   enEl.classList.toggle('revealed', !isOpen);
 }
+
+// ── Search ──
+// Filters the already-loaded `lessons` in memory (works offline). It only
+// toggles classes on existing DOM rows: never filter `lessons` or rebuild rows,
+// because deleteWord() and the `word-${id}-${index}` ids rely on word indices.
+
+// Lowercase, strip accents (qué -> que, mañana -> manana) and punctuation.
+function norm(s) {
+  return String(s || '').toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[¿¡?!.,;:]/g, '')
+    .trim();
+}
+
+let searchSnapshot = null; // open lessons / revealed rows from before the search
+let lastMatchKey = '';     // matching lesson ids, to scroll only when they change
+let searchTimer = null;
+
+function setRowRevealed(row, revealed) {
+  row.querySelector('.word-reveal').classList.toggle('open', revealed);
+  row.querySelector('.word-en').classList.toggle('revealed', revealed);
+}
+
+function setLessonOpen(id, open) {
+  document.getElementById(`body-${id}`).classList.toggle('open', open);
+  document.getElementById(`arrow-${id}`).classList.toggle('open', open);
+}
+
+function applySearch() {
+  const input = document.getElementById('search-input');
+  const q = norm(input.value);
+  if (q.length < 2) { clearSearch(); return; }
+
+  if (!searchSnapshot) {
+    searchSnapshot = {
+      open: new Set([...document.querySelectorAll('.lesson-body.open')].map(b => b.id.slice(5))),
+      revealed: new Set([...document.querySelectorAll('.word-reveal.open')].map(r => r.parentElement.id)),
+    };
+  }
+
+  const matched = [];
+  lessons.forEach(lesson => {
+    const el = document.getElementById(`lesson-${lesson.id}`);
+    if (!el) return;
+    let hit = norm(lesson.title).includes(q);
+    lesson.words.forEach((w, i) => {
+      const row = document.getElementById(`word-${lesson.id}-${i}`);
+      if (!row) return;
+      const rowHit = norm(w.en).includes(q) || norm(w.es).includes(q);
+      if (rowHit) hit = true;
+      if (rowHit || row.classList.contains('search-hit')) {
+        row.classList.toggle('search-hit', rowHit);
+        setRowRevealed(row, rowHit);
+      }
+    });
+    el.classList.toggle('search-hidden', !hit);
+    if (hit) { setLessonOpen(lesson.id, true); matched.push(lesson.id); }
+  });
+
+  const empty = document.getElementById('search-empty');
+  empty.hidden = matched.length > 0;
+  empty.textContent = matched.length ? '' : `No lessons contain "${input.value.trim()}"`;
+
+  const key = matched.join(',');
+  if (key !== lastMatchKey && matched.length) {
+    document.getElementById(`lesson-${matched[0]}`).scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+  lastMatchKey = key;
+}
+
+function clearSearch() {
+  const empty = document.getElementById('search-empty');
+  empty.hidden = true;
+  empty.textContent = '';
+  lastMatchKey = '';
+  if (!searchSnapshot) return;
+  document.querySelectorAll('.lesson.search-hidden').forEach(el => el.classList.remove('search-hidden'));
+  document.querySelectorAll('.word-row.search-hit').forEach(el => el.classList.remove('search-hit'));
+  lessons.forEach(l => {
+    if (document.getElementById(`body-${l.id}`)) setLessonOpen(l.id, searchSnapshot.open.has(l.id));
+  });
+  document.querySelectorAll('.word-row').forEach(row => setRowRevealed(row, searchSnapshot.revealed.has(row.id)));
+  searchSnapshot = null;
+}
+
+(function initSearch() {
+  const input = document.getElementById('search-input');
+  input.addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(applySearch, 100);
+  });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      clearTimeout(searchTimer);
+      input.value = '';
+      clearSearch();
+    }
+  });
+})();
 
 async function cycleProgress(lessonId) {
   if (blockedOffline()) return;
