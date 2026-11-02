@@ -9,7 +9,7 @@
 // Note: if the Flask session cookie expires while offline, re-login requires
 // connectivity. Acceptable for this use case.
 
-const CACHE = 'vocab-v1';
+const CACHE = 'vocab-v2';
 const SHELL = ['/'];
 
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];

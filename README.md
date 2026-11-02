@@ -9,6 +9,7 @@ A local web app for practising Spanish vocabulary with flashcard-style reveal an
 - Progress tracking per lesson (not started / still learning / mastered)
 - Add new lessons and words from within the app
 - Delete words or entire lessons
+- Search by English or Spanish word or phrase (accent-insensitive) — shows only matching lessons, expanded, with matches highlighted and translations revealed; works offline
 - Data persisted in SQLite — survives restarts
 - Offline study support — browse lessons and reveal translations without connectivity (see [Offline Support](#offline-support))
 
